@@ -8,10 +8,10 @@ import {
   PopoverBody,
   ListGroup,
   ListGroupItem,
+  Button,
 } from "reactstrap";
 import bn from "../../utils/bemnames";
 import routes from "../../Config/routes";
-import { RenderButton } from "../MainRender";
 import {
   MdReorder,
   MdHelp,
@@ -59,14 +59,10 @@ class Header extends React.Component {
 
   render() {
     const isMobile = this.state.isMobile;
-    let drawerClasses = "";
-    if (this.props.scrolled) {
-      drawerClasses = "bg-gradient-theme-right scrolledAppBar";
-    }
 
     return (
       <>
-        <Navbar light fixed="top" expand className={drawerClasses}>
+        <Navbar light expand className="bg-primary text-light">
           <Link
             to={{ pathname: routes.homePage }}
             style={{ textDecoration: "none" }}
@@ -76,7 +72,7 @@ class Header extends React.Component {
 
           {isMobile && (
             <Nav navbar className="ml-2">
-              Project Title
+              CHRS
             </Nav>
           )}
           {isMobile ? (
@@ -104,7 +100,7 @@ class Header extends React.Component {
                         action
                         className="border-light"
                       >
-                        <MdHelp className="mr-3" /> How Magazine Works
+                        <MdHelp className="mr-3" /> How CHRS Works
                       </ListGroupItem>
 
                       <ListGroupItem
@@ -112,7 +108,7 @@ class Header extends React.Component {
                         action
                         className="border-light"
                       >
-                        <MdPanoramaFishEye className="mr-3" /> Browse Magazine
+                        <MdPanoramaFishEye className="mr-3" /> Browse CHRS
                       </ListGroupItem>
                       <ListGroupItem
                         tag="button"
@@ -131,29 +127,27 @@ class Header extends React.Component {
                     </ListGroup>
                   </PopoverBody>
                 </Popover>
+
                 <NavLink onMouseEnter={this.toggleAboutPopover}>
-                  <RenderButton
-                    title="About"
-                    outline
-                    color="dark"
+                  <MdHelp
+                    className="text-light mt-1"
+                    size={25}
                     id="AboutPopover"
                   />
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <RenderButton
-                    title="SignUp"
-                    onClick={() => this.props.toggle("signUp")}
-                  />
+                  <Link to={{ pathname: routes.Auth }}>
+                    <Button color="light">SignUp</Button>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <RenderButton
-                    onClick={() => this.props.toggle("signIn")}
-                    title="SignIn"
-                  />
+                  <Link to={{ pathname: routes.Auth }}>
+                    <Button color="light">SignIn</Button>
+                  </Link>
                 </NavLink>
               </NavItem>
             </Nav>
@@ -169,21 +163,15 @@ class Header extends React.Component {
               >
                 <PopoverBody className="p-1">
                   <ListGroup flush>
-                    <ListGroupItem
-                      tag="button"
-                      action
-                      className="border-light"
-                      onClick={() => this.props.toggle("signIn")}
-                    >
-                      <MdExitToApp className="mr-2" /> {"  "} SignIn
+                    <ListGroupItem tag="button" action className="border-light">
+                      <Link to={{ pathname: routes.Auth }}>
+                        <MdExitToApp className="mr-2" /> {"  "} SignIn
+                      </Link>
                     </ListGroupItem>
-                    <ListGroupItem
-                      tag="button"
-                      action
-                      className="border-light"
-                      onClick={() => this.props.toggle("signUp")}
-                    >
-                      <MdGroupAdd className="mr-2" /> SignUp
+                    <ListGroupItem tag="button" action className="border-light">
+                      <Link to={{ pathname: routes.Auth }}>
+                        <MdGroupAdd className="mr-2" /> SignUp
+                      </Link>
                     </ListGroupItem>
                     <ListGroupItem tag="button" action className="border-light">
                       <MdHelp className="mr-2" /> About Us

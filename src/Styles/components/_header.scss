@@ -1,6 +1,8 @@
 .cr-header {
   // margin-bottom: $spacer * .2;
   border-bottom: $border-width solid $border-color;
+  padding: 0 auto;
+  width: 50%;
   &__nav-right {
     flex-direction: row;
     display: flex;

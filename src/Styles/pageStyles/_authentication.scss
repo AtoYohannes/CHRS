@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     height:140%; 
+    .card {
+    box-shadow: 5px 5px 10px #d4d4d4;
+    }
 }
 
 .authContainer-Mobile {
@@ -14,4 +17,7 @@
     justify-content: center;
     align-items: center;
     height:120%; 
+    .card {
+        box-shadow: 5px 5px 10px #d4d4d4;
+    }
 }

@@ -21,14 +21,14 @@ class SignIn extends React.Component {
   }
   render() {
     const isMobile = this.state.isMobile;
-   let drawerClasses='authContainer'
-   if (!isMobile) {
-     drawerClasses='authContainer-Mobile'
-   }
-    
+    let drawerClasses = "authContainer";
+    if (!isMobile) {
+      drawerClasses = "authContainer-Mobile";
+    }
+
     return (
       <div className={drawerClasses}>
-        <Card align="center" className="bg-background p-5">
+        <Card align="center" className="bg-background p-5 card">
           <h5 className="mb-3">
             <b>Sign in or create an account</b>
           </h5>
@@ -42,6 +42,7 @@ class SignIn extends React.Component {
           </FormGroup>
           or
           <hr />
+          {/* // TODO Implement Other Login Options */}
           <hr />
           By signing in or creating an account, you agree with our Terms &
           Conditions and Privacy Statement

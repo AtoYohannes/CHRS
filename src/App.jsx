@@ -6,7 +6,7 @@ import routes from "./Config/routes";
 import { Spinner } from "reactstrap";
 import { MainLayout } from "./Components/Layout";
 
-const DemoPage = React.lazy(() => import("./Pages/DemoPage"));
+const LandingPage = React.lazy(() => import("./Pages/LandingPage"));
 const Auth = React.lazy(() => import("./Pages/Authentication/Auth"));
 
 const getBasename = () => {
@@ -26,7 +26,7 @@ function App() {
                 </div>
               }
             >
-              <Route exact path={routes.homePage} component={DemoPage} />
+              <Route exact path={routes.homePage} component={LandingPage} />
               <Route exact path={routes.Auth} component={Auth} />
             </React.Suspense>
           </MainLayout>

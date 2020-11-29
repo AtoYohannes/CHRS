@@ -86,7 +86,7 @@ class Header extends React.Component {
                   target="AboutPopover"
                   className="p-5 border"
                 >
-                  <PopoverBody className="p-2 border-light">
+                  <PopoverBody className="p-2 border-light ">
                     <ListGroup flush>
                       <ListGroupItem
                         tag="button"

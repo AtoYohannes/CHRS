@@ -8,7 +8,7 @@ class LandingPage extends Component {
   }
   render() {
     return (
-      <div className='landingPageContainer'>
+      <div className="landingPageContainer">
         <Booking />
         <Explore />
       </div>

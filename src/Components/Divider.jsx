@@ -1,17 +1,17 @@
 import React from "react";
-import EllipseLeft from "../Assets/icons/Ellipse-Left.svg";
-import EllipseRight from "../Assets/icons/Ellipse-Right.svg";
+import { MdHotel } from "react-icons/md";
 
 const Divider = ({ title }) => {
   return (
     <div className="divider bg-background mt-5 mb-5">
-      <img src={EllipseLeft} alt="" />
+      <MdHotel />
+
       <div className="ml-1 mr-1">
-        <h3>
+        <h6>
           <b>{title}</b>
-        </h3>
+        </h6>
       </div>
-      <img src={EllipseRight} alt="" />
+      <MdHotel />
     </div>
   );
 };

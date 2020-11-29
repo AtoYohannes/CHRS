@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
-import { Card, CardImg, CardHeader, CardText, Col } from "reactstrap";
+import { Card, CardImg, CardHeader, Col } from "reactstrap";
 import image from "../../../Assets/Nunu.jpg";
 
 const hotel = [

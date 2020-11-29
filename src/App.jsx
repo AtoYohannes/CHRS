@@ -7,7 +7,8 @@ import { Spinner } from "reactstrap";
 import { MainLayout } from "./Components/Layout";
 
 const LandingPage = React.lazy(() => import("./Pages/LandingPage"));
-const Auth = React.lazy(() => import("./Pages/Authentication/Auth"));
+const SignIn = React.lazy(() => import("./Pages/Authentication/SignIn"));
+const SignUp = React.lazy(() => import("./Pages/Authentication/SignUp"));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split("/").pop()}`;
@@ -27,7 +28,8 @@ function App() {
               }
             >
               <Route exact path={routes.homePage} component={LandingPage} />
-              <Route exact path={routes.Auth} component={Auth} />
+              <Route exact path={routes.signIn} component={SignIn} />
+              <Route exact path={routes.signUp} component={SignUp} />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

@@ -1,5 +1,14 @@
 import React from "react";
-import { Button, Card, FormGroup, Input, Label } from "reactstrap";
+import {
+  Button,
+  Card,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Col,
+  CardHeader,
+} from "reactstrap";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -28,19 +37,26 @@ class SignIn extends React.Component {
 
     return (
       <div className={drawerClasses}>
-        <Card align="center" className="bg-background p-5 card">
-          <h5 className="mb-3">
-            <b>Sign in or create an account</b>
-          </h5>
-          <hr />
-          <FormGroup>
-            <Label>Email Address</Label>
-            <Input placeholder="Email" />
-          </FormGroup>
-          <FormGroup>
-            <Button block>Continue With Email</Button>
-          </FormGroup>
-          or
+        <Card className="bg-background-card p-5 card">
+          <CardHeader className="mb-3" align="center">
+            <h5>
+              <b>Sign in </b>
+            </h5>
+          </CardHeader>
+          <Form>
+            <FormGroup>
+              <Label>Email Address</Label>
+              <Input placeholder="Email" />
+            </FormGroup>
+            <FormGroup>
+              <Label>Password</Label>
+              <Input placeholder="Password" type="password" />
+            </FormGroup>
+            <FormGroup>
+              <Button block>Continue With Email</Button>
+            </FormGroup>
+          </Form>
+          <Col align="center">or</Col>
           <hr />
           {/* // TODO Implement Other Login Options */}
           <hr />

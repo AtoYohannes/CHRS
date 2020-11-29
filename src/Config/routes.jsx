@@ -1,4 +1,6 @@
 export default {
   homePage: "/",
-  Auth: "/Auth",
+  signIn: "/signIn",
+  signUp: "/signUp",
+
 };

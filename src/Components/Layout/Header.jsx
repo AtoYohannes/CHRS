@@ -138,14 +138,14 @@ class Header extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Link to={{ pathname: routes.Auth }}>
+                  <Link to={{ pathname: routes.signUp }}>
                     <Button color="light">SignUp</Button>
                   </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Link to={{ pathname: routes.Auth }}>
+                  <Link to={{ pathname: routes.signIn }}>
                     <Button color="light">SignIn</Button>
                   </Link>
                 </NavLink>
@@ -164,12 +164,12 @@ class Header extends React.Component {
                 <PopoverBody className="p-1">
                   <ListGroup flush>
                     <ListGroupItem tag="button" action className="border-light">
-                      <Link to={{ pathname: routes.Auth }}>
+                      <Link to={{ pathname: routes.signIn }}>
                         <MdExitToApp className="mr-2" /> {"  "} SignIn
                       </Link>
                     </ListGroupItem>
                     <ListGroupItem tag="button" action className="border-light">
-                      <Link to={{ pathname: routes.Auth }}>
+                      <Link to={{ pathname: routes.signUp }}>
                         <MdGroupAdd className="mr-2" /> SignUp
                       </Link>
                     </ListGroupItem>

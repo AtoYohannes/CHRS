@@ -1,13 +1,18 @@
+.landingPageContainer {
+  margin: 0 auto;
+  // width: 60%;
+
+
+// =========== EXPLORE ===========
+
 .exploreContainer {
     padding: 20px;
     img {
-        height: 200px;
+        height: 150px;
         width: 200px;
         object-fit: cover;
     }
-
     .menu-item {
-        padding: 10px;
         margin: 5px;
         border: none;
         transition: 0.5s;
@@ -15,13 +20,25 @@
 
       .menu-item:hover {
         // border: 1px green solid;
-        box-shadow: 3px 3px 5px #d4d4d4;
-
-    
+        box-shadow: 0px 0px 8px #aeaeae;
       }
-       
       .scroll-menu-arrow {
         padding: 5px;
         cursor: pointer;
       }
+}
+
+// =========== BOOKING ===========
+
+.bookingContainer {
+  height: auto;
+  background-color: #d6d6d6;
+  // display: flex;
+  // justify-content: center;
+  padding: 30px;
+  input {
+    background-color: white;
+    height: 50px;
+  }
+}
 }

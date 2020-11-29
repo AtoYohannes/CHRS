@@ -8,7 +8,10 @@ import {
   Label,
   Col,
   CardHeader,
+  CardImg,
+  Row,
 } from "reactstrap";
+import { Facebook, Google } from "../../Assets/LoginAssets";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -56,14 +59,24 @@ class SignIn extends React.Component {
               <Button block>Continue With Email</Button>
             </FormGroup>
           </Form>
-          <Col align="center">or</Col>
-          <hr />
-          {/* // TODO Implement Other Login Options */}
-          <hr />
-          By signing in or creating an account, you agree with our Terms &
-          Conditions and Privacy Statement
-          <hr />
-          All rights reserved.
+          <Col align="center">
+            <div>or</div>
+            <hr />
+            {/* // TODO Implement Other Login Options */}
+            <Row>
+              <Col md={6} sm={6} xs={6}>
+                <CardImg src={Facebook} />
+              </Col>
+              <Col md={6} sm={6} xs={6}>
+                <CardImg src={Google} />
+              </Col>
+            </Row>
+            <hr />
+            By signing in or creating an account, you agree with our Terms &
+            Conditions and Privacy Statement
+            <hr />
+            All rights reserved.
+          </Col>
         </Card>
       </div>
     );

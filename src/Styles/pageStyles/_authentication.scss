@@ -1,19 +1,25 @@
 .authContainer {
-    margin: 0 auto;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:120%; 
-
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110%;
+  img {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .authContainer-Mobile {
-    margin: 0 auto;
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:103%; 
-
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 103%;
+  img {
+    height: 50px;
+    width: 50px;
+  }
 }

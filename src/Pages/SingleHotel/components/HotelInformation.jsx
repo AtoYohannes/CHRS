@@ -46,7 +46,8 @@ const HotelInformation = () => {
           <FreeBreakfast />
           <FreeParking />
           <Bar />
-          <Restaurant /> <NoSmokingRooms />
+          <Restaurant />
+          <NoSmokingRooms />
           <TEA_COFFEE />
           <ATM />
         </Row>

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  MdChildFriendly,
-  MdCreditCard,
-  MdLockOpen,
-  MdPets,
-} from "react-icons/md";
+import { MdChildFriendly, MdCreditCard, MdPets } from "react-icons/md";
 import { Col, Row, Card, CardTitle } from "reactstrap";
 
 const HouseRules = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { MdAdd, MdHotel } from "react-icons/md";
+import { MdAdd, MdDoneAll, MdPerson } from "react-icons/md";
 import { Button, Table } from "reactstrap";
 
 const RoomAvailability = () => {
@@ -8,7 +8,7 @@ const RoomAvailability = () => {
       <h6>
         <b>Room Availability</b>
       </h6>
-      <Table borderless responsive>
+      <Table responsive>
         <thead>
           <tr>
             <th>Room Type</th>
@@ -23,17 +23,21 @@ const RoomAvailability = () => {
               Budget Single Room
               <div>
                 <div className="feature">
-                  <MdHotel color="green" /> one bed
+                  <MdDoneAll color="green" /> one bed
                 </div>
                 <div className="feature">
-                  <MdHotel color="green" /> two bed
+                  <MdDoneAll color="green" /> two bed
                 </div>
                 <div className="feature">
-                  <MdHotel color="green" /> two bed
+                  <MdDoneAll color="green" /> three bed
                 </div>{" "}
               </div>
             </th>
-            <td>Mark</td>
+            <td>
+              {" "}
+              <MdPerson />
+            </td>
+
             <td>Otto</td>
             <td>
               <Button>
@@ -44,8 +48,23 @@ const RoomAvailability = () => {
             </td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
+            <th scope="row">
+              Deluxe Room
+              <div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> one bed
+                </div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> two bed
+                </div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> three bed
+                </div>{" "}
+              </div>
+            </th>
+            <td>
+              <MdPerson />
+            </td>
             <td>Thornton</td>
             <td>
               <Button>
@@ -56,8 +75,26 @@ const RoomAvailability = () => {
             </td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
+            <th scope="row">
+              Luxury Queen
+              <div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> one bed
+                </div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> two bed
+                </div>
+                <div className="feature">
+                  <MdDoneAll color="green" /> three bed
+                </div>{" "}
+              </div>
+            </th>
+            <td>
+              <MdPerson />
+              <MdPerson />
+              <MdPerson />
+            </td>
+
             <td>the Bird</td>
             <td>
               <Button>

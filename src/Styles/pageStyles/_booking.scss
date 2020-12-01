@@ -32,4 +32,28 @@
 .bookingConfirmation {
   margin: 0 auto;
   width: 50%;
+  .labelss {
+    color: green;
+    font-weight: bold;
+    div {
+      margin-bottom: 5px;
+    }
+  }
+  h8 {
+    margin: 15px;
+    font-weight: bolder;
+  }
+  button {
+    font-size: 9px;
+  }
+  .invoicing {
+    div {
+      margin-bottom: 10px;
+    }
+    .propertyDisplay {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
 }

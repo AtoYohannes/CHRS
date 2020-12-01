@@ -1,0 +1,30 @@
+.bookingContainers {
+  margin: 0 auto;
+  width: 50%;
+
+  .progresses {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .detailInfo {
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .ratings {
+      color: gold;
+    }
+    small {
+      margin-bottom: 10px;
+    }
+    .signIn {
+      background-color: #eeffef;
+    }
+    label {
+      font-size: 11px;
+    }
+    input {
+      font-size: 9px;
+    }
+  }
+}

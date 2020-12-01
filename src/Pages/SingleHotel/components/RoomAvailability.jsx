@@ -1,6 +1,8 @@
 import React from "react";
 import { MdAdd, MdDoneAll, MdPerson } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { Button, Table } from "reactstrap";
+import routes from "../../../Config/routes";
 
 const RoomAvailability = () => {
   return (
@@ -19,8 +21,8 @@ const RoomAvailability = () => {
         </thead>
         <tbody>
           <tr>
-            <th>
-              Budget Single Room
+            <td>
+              <b>Budget Single Room</b>
               <div>
                 <div className="feature">
                   <MdDoneAll color="green" /> one bed
@@ -32,7 +34,7 @@ const RoomAvailability = () => {
                   <MdDoneAll color="green" /> three bed
                 </div>{" "}
               </div>
-            </th>
+            </td>
             <td>
               {" "}
               <MdPerson />
@@ -40,16 +42,18 @@ const RoomAvailability = () => {
 
             <td>Otto</td>
             <td>
-              <Button>
-                {" "}
-                <MdAdd />
-                Reserve
-              </Button>
+              <Link to={{ pathname: routes.booking }}>
+                <Button>
+                  {" "}
+                  <MdAdd />
+                  Reserve
+                </Button>
+              </Link>
             </td>
           </tr>
           <tr>
-            <th scope="row">
-              Deluxe Room
+            <td>
+              <b>Deluxe Room</b>
               <div>
                 <div className="feature">
                   <MdDoneAll color="green" /> one bed
@@ -61,22 +65,24 @@ const RoomAvailability = () => {
                   <MdDoneAll color="green" /> three bed
                 </div>{" "}
               </div>
-            </th>
+            </td>
             <td>
               <MdPerson />
             </td>
             <td>Thornton</td>
             <td>
-              <Button>
-                {" "}
-                <MdAdd />
-                Reserve
-              </Button>
+              <Link to={{ pathname: routes.booking }}>
+                <Button>
+                  {" "}
+                  <MdAdd />
+                  Reserve
+                </Button>
+              </Link>
             </td>
           </tr>
           <tr>
-            <th scope="row">
-              Luxury Queen
+            <td>
+              <b>Luxury Queen</b>
               <div>
                 <div className="feature">
                   <MdDoneAll color="green" /> one bed
@@ -88,20 +94,21 @@ const RoomAvailability = () => {
                   <MdDoneAll color="green" /> three bed
                 </div>{" "}
               </div>
-            </th>
+            </td>
             <td>
               <MdPerson />
               <MdPerson />
               <MdPerson />
             </td>
-
             <td>the Bird</td>
             <td>
-              <Button>
-                {" "}
-                <MdAdd />
-                Reserve
-              </Button>
+              <Link to={{ pathname: routes.booking }}>
+                <Button>
+                  {" "}
+                  <MdAdd />
+                  Reserve
+                </Button>
+              </Link>
             </td>
           </tr>
         </tbody>

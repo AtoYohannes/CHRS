@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Card,
@@ -12,6 +13,7 @@ import {
   Row,
 } from "reactstrap";
 import { Facebook, Google } from "../../Assets/LoginAssets";
+import routes from "../../Config/routes";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -54,7 +56,13 @@ class SignIn extends React.Component {
             <FormGroup>
               <Label>Password</Label>
               <Input placeholder="Password" type="password" />
+              <Col align="right" className="mb-1">
+                <Link to={{ pathname: routes.signUp }}>
+                  <small>Don't have an account?</small>
+                </Link>
+              </Col>
             </FormGroup>
+
             <FormGroup>
               <Button block>Continue With Email</Button>
             </FormGroup>
@@ -62,7 +70,6 @@ class SignIn extends React.Component {
           <Col align="center">
             <div>or</div>
             <hr />
-            {/* // TODO Implement Other Login Options */}
             <Row>
               <Col md={6} sm={6} xs={6}>
                 <CardImg src={Facebook} />

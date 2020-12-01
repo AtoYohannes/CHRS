@@ -4,4 +4,5 @@ export default {
   signUp: "/signUp",
   singleHotel: "/singleHotel",
   booking: "/booking",
+  bookingConfirmation: "/bookingConfirmation",
 };

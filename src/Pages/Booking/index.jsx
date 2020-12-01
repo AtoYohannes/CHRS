@@ -118,7 +118,9 @@ const Booking = () => {
               </FormGroup>
             </Col>
             <Col md={12} align="center">
-              <Button>Confirm Your Booking</Button>
+              <Link to={{ pathname: routes.bookingConfirmation }}>
+                <Button>Confirm Your Booking</Button>
+              </Link>
             </Col>
           </Row>
         </Card>

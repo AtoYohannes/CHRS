@@ -13,6 +13,9 @@ const SignIn = React.lazy(() => import("./Pages/Authentication/SignIn"));
 const SignUp = React.lazy(() => import("./Pages/Authentication/SignUp"));
 const SingleHotel = React.lazy(() => import("./Pages/SingleHotel"));
 const Booking = React.lazy(() => import("./Pages/Booking"));
+const Rating = React.lazy(() => import("./Pages/Rating"));
+const AllHotels = React.lazy(() => import("./Pages/AllHotels"));
+
 const BookingConfirmation = React.lazy(() =>
   import("./Pages/BookingConfirmation")
 );
@@ -44,6 +47,8 @@ function App() {
                 path={routes.bookingConfirmation}
                 component={BookingConfirmation}
               />
+              <Route exact path={routes.rating} component={Rating} />
+              <Route exact path={routes.allHotels} component={AllHotels} />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

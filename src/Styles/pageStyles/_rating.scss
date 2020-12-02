@@ -1,0 +1,46 @@
+.ratingsContainer {
+  margin: 0 auto;
+  width: 40%;
+  img {
+    height: 250px;
+    object-fit: cover;
+  }
+  .divi {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .iconsRating {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 10px;
+  }
+  .spacingg {
+    margin-bottom: 15px;
+    .iconAngry {
+      color: lightslategray;
+    }
+    .iconAngry:hover {
+      color: $danger;
+    }
+  }
+  .iconOkay {
+    color: lightslategray;
+  }
+  .iconOkay:hover {
+    color: $warning;
+  }
+  .icon {
+    color: lightslategray;
+  }
+  .icon:hover {
+    color: $success;
+  }
+  textarea {
+    height: 150px;
+    font-size: 11px;
+  }
+}

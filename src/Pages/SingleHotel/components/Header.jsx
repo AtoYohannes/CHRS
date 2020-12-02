@@ -1,6 +1,8 @@
 import React from "react";
-import { MdHotel, MdPinDrop, MdStar } from "react-icons/md";
+import { MdPinDrop, MdStar, MdStarBorder } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { Col, Row, Button } from "reactstrap";
+import routes from "../../../Config/routes";
 
 const Header = () => {
   return (
@@ -33,10 +35,12 @@ const Header = () => {
           </small>
         </Col>
         <Col md={6} align="right">
-          <Button>
-            <MdHotel className="text-light" />{" "}
-            <b className="text-light">RESERVE</b>
-          </Button>
+          <Link to={{ pathname: routes.rating }}>
+            <Button>
+              <MdStarBorder size={20} className="text-light" />{" "}
+              <b className="text-light">RATE</b>
+            </Button>
+          </Link>
         </Col>
       </Row>
     </div>

@@ -5,4 +5,6 @@ export default {
   singleHotel: "/singleHotel",
   booking: "/booking",
   bookingConfirmation: "/bookingConfirmation",
+  rating: "/rating",
+  allHotels: "/allHotels",
 };

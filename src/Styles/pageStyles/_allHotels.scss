@@ -40,4 +40,15 @@
       height: 50px;
     }
   }
+
+  .AllItemsHotelContainer {
+    img {
+      width: 300px;
+      object-fit: cover;
+    }
+    .hotelNames {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

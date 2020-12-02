@@ -52,6 +52,8 @@
   margin-bottom: 30px;
   margin: 0 auto;
   width: 95%;
+  display: flex;
+  justify-content: space-between;
 }
 .scrolledAppBar {
   button {

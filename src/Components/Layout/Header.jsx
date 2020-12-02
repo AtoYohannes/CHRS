@@ -138,6 +138,13 @@ class Header extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink>
+                  <Link to={{ pathname: routes.addHotels }}>
+                    <Button className="border">Add Your Hotel</Button>
+                  </Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
                   <Link to={{ pathname: routes.signUp }}>
                     <Button color="light">SignUp</Button>
                   </Link>

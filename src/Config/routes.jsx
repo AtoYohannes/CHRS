@@ -7,4 +7,5 @@ export default {
   bookingConfirmation: "/bookingConfirmation",
   rating: "/rating",
   allHotels: "/allHotels",
+  addHotels: "/addHotels",
 };

@@ -15,7 +15,7 @@ const SingleHotel = React.lazy(() => import("./Pages/SingleHotel"));
 const Booking = React.lazy(() => import("./Pages/Booking"));
 const Rating = React.lazy(() => import("./Pages/Rating"));
 const AllHotels = React.lazy(() => import("./Pages/AllHotels"));
-
+const AddHotel = React.lazy(() => import("./Pages/AddHotel"));
 const BookingConfirmation = React.lazy(() =>
   import("./Pages/BookingConfirmation")
 );
@@ -49,6 +49,7 @@ function App() {
               />
               <Route exact path={routes.rating} component={Rating} />
               <Route exact path={routes.allHotels} component={AllHotels} />
+              <Route exact path={routes.addHotels} component={AddHotel} />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

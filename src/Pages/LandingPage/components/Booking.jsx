@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Input, Row, Button, Col } from "reactstrap";
+import routes from "../../../Config/routes";
 
 class Explore extends Component {
   constructor(props) {
@@ -42,7 +44,9 @@ class Explore extends Component {
               </Input>
             </div>
             <div>
-              <Button color="primary">Search</Button>
+              <Link to={{ pathname: routes.allHotels }}>
+                <Button color="primary">Search</Button>
+              </Link>
             </div>
           </Row>
         </Col>

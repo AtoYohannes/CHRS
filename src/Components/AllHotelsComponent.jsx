@@ -39,7 +39,7 @@ const AllHotelsComponent = () => {
                   <MdPinDrop /> <small>Bole Addis Ababa Ethiopia</small>
                 </CardBody>
               </Col>
-              <Col align="right" className="p-3" md={3} sm={12} xs={12}>
+              <Col align="right" className="pr-5" md={3} sm={12} xs={12}>
                 <CardTitle>
                   <Card className="ratingRate bg-secondary text-light">
                     <h4>

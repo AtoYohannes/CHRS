@@ -1,29 +1,106 @@
 import React from "react";
-import { Card, CardBody, CardHeader, CardImg, Col, Row } from "reactstrap";
-import { Intercontinental } from "../../../Assets/HotelImages/HotelView";
+import {
+  CardHeader,
+  Pagination,
+  PaginationLink,
+  PaginationItem,
+  Col,
+} from "reactstrap";
+
+import { AllHotelsComponent } from "../../../Components";
 
 const HotelComponent = () => {
   return (
     <div>
-      <Card className="border-0">
-        <CardHeader>Hotel Component</CardHeader>
-        <CardBody>
-          <Card row className="AllItemsHotelContainer">
-            <Row>
-              <Col md={4} sm={12} xs={12}>
-                <CardImg src={Intercontinental} />
-              </Col>
-
-              <Col className="hotelNames" md={8} sm={12} xs={12}>
-                <CardHeader className="border-0">
-                  Skylight International Hotel
-                </CardHeader>
-                <CardHeader className="border-0">Rating Goes Here</CardHeader>
-              </Col>
-            </Row>
-          </Card>
-        </CardBody>
-      </Card>
+      <CardHeader>Hotels in Our Database</CardHeader>
+      <AllHotelsComponent />
+      <AllHotelsComponent />
+      <AllHotelsComponent />
+      <Col md={12} sm={12} xs={12}>
+        <Pagination aria-label="Page navigation example">
+          <PaginationItem>
+            <PaginationLink first href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink previous href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">2</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">3</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">4</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>{" "}
+          <PaginationItem>
+            <PaginationLink href="#">5</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink next href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink last href="#" />
+          </PaginationItem>
+        </Pagination>
+      </Col>
     </div>
   );
 };

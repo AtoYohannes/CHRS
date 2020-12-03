@@ -43,12 +43,18 @@
 
   .AllItemsHotelContainer {
     img {
-      width: 300px;
+      width: 220px;
+      height: 230px;
       object-fit: cover;
     }
-    .hotelNames {
-      display: flex;
-      justify-content: space-between;
+
+    .ratingRate {
+      max-width: 80px;
+      padding: 20px;
+      margin-right: 20px;
+    }
+    .reviews {
+      color: rgb(175, 174, 174);
     }
   }
 }

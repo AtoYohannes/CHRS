@@ -12,7 +12,7 @@ import {
   Input,
   Form,
 } from "reactstrap";
-import { MdLocationOn, MdPerson, MdStar } from "react-icons/md";
+import { MdLocationOn, MdPerson } from "react-icons/md";
 
 class StepperExample extends React.Component {
   state = {
@@ -69,11 +69,6 @@ class StepperExample extends React.Component {
                     icon="image"
                     stepName="Terms and Conditions"
                     onClick={this.swapFormActive(3)(3)}
-                  />
-                  <MDBStep
-                    icon="check"
-                    stepName="Finish"
-                    onClick={this.swapFormActive(3)(4)}
                   />
                   <MDBStep
                     icon="check"

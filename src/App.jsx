@@ -19,6 +19,8 @@ const AddHotel = React.lazy(() => import("./Pages/AddHotel"));
 const BookingConfirmation = React.lazy(() =>
   import("./Pages/BookingConfirmation")
 );
+const SettingsPage = React.lazy(() => import("./Pages/SettingsPage"));
+const ProfilePage = React.lazy(() => import("./Pages/ProfilePage"));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split("/").pop()}`;
@@ -50,6 +52,8 @@ function App() {
               <Route exact path={routes.rating} component={Rating} />
               <Route exact path={routes.allHotels} component={AllHotels} />
               <Route exact path={routes.addHotels} component={AddHotel} />
+              <Route exact path={routes.profile} component={ProfilePage} />
+              <Route exact path={routes.settings} component={SettingsPage} />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

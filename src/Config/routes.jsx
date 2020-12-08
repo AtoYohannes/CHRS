@@ -8,4 +8,6 @@ export default {
   rating: "/rating",
   allHotels: "/allHotels",
   addHotels: "/addHotels",
+  settings: "/settings",
+  profile: "/profile",
 };

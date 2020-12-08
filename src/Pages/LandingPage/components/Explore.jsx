@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Card, CardImg, Col, CardTitle, Button } from "reactstrap";
+import { Card, CardImg, Col, CardTitle } from "reactstrap";
 import {
   Eleli,
   Eleli2,
@@ -111,7 +111,6 @@ export const Menu = (hotel, selected) =>
           location={location}
           image={image}
           key={hotelName}
-          // selected={selected}
         />
       </Link>
     );
@@ -153,13 +152,6 @@ class Booking extends Component {
           <div>
             <h6>Hotels</h6>
             <h7>These popular destinations have a lot to offer</h7>
-          </div>
-          <div>
-            <Link to={{ pathname: routes.allHotels }}>
-              <Button className="border-0 mt-2" outline size="sm">
-                All Hotels <MdArrowForward />
-              </Button>
-            </Link>
           </div>
         </div>
 

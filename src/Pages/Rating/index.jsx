@@ -14,6 +14,7 @@ import { MdArrowBack, MdFace, MdPerson, MdTagFaces } from "react-icons/md";
 import { FaRegAngry } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import routes from "../../Config/routes";
+
 const Rating = () => {
   return (
     <div className="ratingsContainer">
@@ -163,9 +164,11 @@ const Rating = () => {
           <p>Very Good</p>
         </Col>
         <CardFooter>
-          <Button outline block>
-            Submit Rating
-          </Button>
+          <Link to={{ pathname: routes.singleHotel }}>
+            <Button outline block>
+              Submit Rating
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>

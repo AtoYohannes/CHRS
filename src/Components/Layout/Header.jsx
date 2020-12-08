@@ -9,20 +9,26 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
+  UncontrolledPopover,
 } from "reactstrap";
 import bn from "../../utils/bemnames";
 import routes from "../../Config/routes";
 import {
-  MdReorder,
-  MdHelp,
   MdExitToApp,
-  MdGroupAdd,
-  MdPerson,
+  MdHelp,
+  MdInsertChart,
+  MdPersonPin,
+  MdSettingsApplications,
   MdPanoramaFishEye,
   MdQuestionAnswer,
   MdPageview,
+  MdPerson,
+  MdReorder,
+  MdGroupAdd,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Avatar from "../Avatar";
+import UserCard from "../Card/UserCard";
 
 const bem = bn.create("header");
 
@@ -33,6 +39,7 @@ class Header extends React.Component {
       isMobile: false,
       isMobilePopoverOpen: false,
       isAboutPopoverOpen: false,
+      isOpenUserCardPopover: false,
     };
     this.updatePredicate = this.updatePredicate.bind(this);
   }
@@ -54,6 +61,12 @@ class Header extends React.Component {
   toggleAboutPopover = () => {
     this.setState({
       isAboutPopoverOpen: !this.state.isAboutPopoverOpen,
+    });
+  };
+  toggleUserCardPopover = () => {
+    this.setState({
+      isOpenUserCardPopover: !this.state.isOpenUserCardPopover,
+      isOpenSearchCardPopover: false,
     });
   };
 
@@ -155,6 +168,96 @@ class Header extends React.Component {
                   <Link to={{ pathname: routes.signIn }}>
                     <Button color="light">SignIn</Button>
                   </Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink id="Popover2">
+                  <>
+                    <div onClick={this.toggleUserCardPopover}>
+                      <Avatar
+                        size={28}
+                        src={
+                          this.props.currentUser &&
+                          this.props.currentUser.avatar
+                        }
+                      />
+                      <UncontrolledPopover
+                        trigger="focus"
+                        placement="bottom-start"
+                        isOpen={this.state.isOpenUserCardPopover}
+                        toggle={this.toggleUserCardPopover}
+                        target="Popover2"
+                        className="p-0 border-0 "
+                        style={{ minWidth: 250 }}
+                      >
+                        <PopoverBody className="p-0 border-light userPopover">
+                          <UserCard
+                            title={
+                              this.props.currentUser
+                                ? this.props.currentUser.name
+                                : "User Name"
+                            }
+                            subtitle={
+                              this.props.currentUser
+                                ? this.props.currentUser.email
+                                : "User Email"
+                            }
+                            text={
+                              this.props.currentUser
+                                ? this.props.currentUser.location
+                                : "User Location"
+                            }
+                            className="border-light"
+                          >
+                            <ListGroup flush>
+                              <Link to={{ pathname: routes.profile }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdPersonPin /> Profile
+                                </ListGroupItem>
+                              </Link>
+                              <Link to={{ pathname: routes.buyAndSell }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdInsertChart /> Activities
+                                </ListGroupItem>
+                              </Link>
+                              <Link to={{ pathname: routes.settings }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdSettingsApplications /> Settings
+                                </ListGroupItem>
+                              </Link>
+                              <ListGroupItem
+                                tag="button"
+                                action
+                                className="border-light"
+                              >
+                                <MdHelp /> Help
+                              </ListGroupItem>
+                              <ListGroupItem
+                                onClick={this.logout}
+                                tag="button"
+                                action
+                                className="border-light"
+                              >
+                                <MdExitToApp /> Signout
+                              </ListGroupItem>
+                            </ListGroup>
+                          </UserCard>
+                        </PopoverBody>
+                      </UncontrolledPopover>
+                    </div>
+                  </>
                 </NavLink>
               </NavItem>
             </Nav>

@@ -39,7 +39,6 @@ const RecentBookings = () => {
                     <div>
                       <MdPinDrop /> <small>Bole Addis Ababa Ethiopia</small>
                     </div>
-
                     <div>
                       from <b>12/22/2020</b>
                     </div>

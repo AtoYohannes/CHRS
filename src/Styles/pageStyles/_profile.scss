@@ -1,0 +1,27 @@
+.profileContainer {
+  margin: 0 auto;
+  width: 60%;
+  .personalInformationContainer {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .recentBookingContainer {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    img {
+      width: 280px;
+      height: 100%;
+      object-fit: cover;
+    }
+    div {
+      margin-bottom: 2px;
+    }
+    .recentBookingCard {
+      box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 1);
+    }
+  }
+}

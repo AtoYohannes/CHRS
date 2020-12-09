@@ -8,7 +8,7 @@ const RecentRatings = () => {
   return (
     <Card className="recentRatingContainer">
       <CardHeader>Your Ratings</CardHeader>
-      <Table responsive striped borderless>
+      <Table responsive hover striped borderless>
         <thead>
           <tr>
             <th>#</th>

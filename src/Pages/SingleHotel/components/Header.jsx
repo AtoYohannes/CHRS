@@ -47,6 +47,12 @@ const Header = () => {
               <b className="text-light">EDIT</b>
             </Button>
           </Link>
+          <Link to={{ pathname: routes.allRatings }}>
+            <Button className="m-1">
+              <MdEdit size={20} className="text-light" />{" "}
+              <b className="text-light">SEE RATINGS</b>
+            </Button>
+          </Link>
         </Col>
       </Row>
     </div>

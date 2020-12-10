@@ -14,4 +14,5 @@ export default {
   // ======== HOTEL OWNERS ROUTES
   properties: "/properties",
   editHotel: "/editHotel",
+  allRatings: "/allRatings",
 };

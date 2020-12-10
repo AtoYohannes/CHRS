@@ -6,6 +6,7 @@ import {
   Properties,
   RecentBookings,
   RecentRatings,
+  Invoices,
 } from "./components";
 
 const Profile = (props) => {
@@ -70,6 +71,19 @@ const Profile = (props) => {
             Your Properties
           </NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames(
+              { active: activeTab === "5" },
+              "text-primary"
+            )}
+            onClick={() => {
+              toggle("5");
+            }}
+          >
+            Your Invoices
+          </NavLink>
+        </NavItem>
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
@@ -83,6 +97,9 @@ const Profile = (props) => {
         </TabPane>
         <TabPane tabId="4">
           <Properties />
+        </TabPane>
+        <TabPane tabId="5">
+          <Invoices />
         </TabPane>
       </TabContent>
     </div>

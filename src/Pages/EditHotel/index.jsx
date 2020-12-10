@@ -23,7 +23,7 @@ import {
   Sheraton,
   Skylight,
   Skylight2,
-} from "../../../Assets/HotelImages/HotelView";
+} from "../../Assets/HotelImages/HotelView";
 import { Carousel } from "react-responsive-carousel";
 import { MdPictureAsPdf, MdAdd, MdSave } from "react-icons/md";
 import {

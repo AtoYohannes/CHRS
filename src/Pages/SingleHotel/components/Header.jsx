@@ -1,5 +1,5 @@
 import React from "react";
-import { MdPinDrop, MdStar, MdStarBorder } from "react-icons/md";
+import { MdEdit, MdPinDrop, MdStar, MdStarBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Col, Row, Button } from "reactstrap";
 import routes from "../../../Config/routes";
@@ -36,9 +36,15 @@ const Header = () => {
         </Col>
         <Col md={6} align="right">
           <Link to={{ pathname: routes.rating }}>
-            <Button>
+            <Button className="m-1">
               <MdStarBorder size={20} className="text-light" />{" "}
               <b className="text-light">RATE</b>
+            </Button>
+          </Link>
+          <Link to={{ pathname: routes.editHotel }}>
+            <Button className="m-1">
+              <MdEdit size={20} className="text-light" />{" "}
+              <b className="text-light">EDIT</b>
             </Button>
           </Link>
         </Col>

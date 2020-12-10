@@ -34,17 +34,16 @@
 
 .zoom {
   img {
-  transition: 1s
+    transition: 2s;
   }
-  transition: 2s
+  transition: 1s;
+  box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 3);
 }
 
 .zoom:hover {
   img {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
+  transform: scale(1.02);
+  box-shadow: 12px 12px 10px darken($color: #d4d4d4, $amount: 2);
 }
-
-
-
-

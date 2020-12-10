@@ -22,6 +22,12 @@ const BookingConfirmation = React.lazy(() =>
 const SettingsPage = React.lazy(() => import("./Pages/SettingsPage"));
 const ProfilePage = React.lazy(() => import("./Pages/ProfilePage"));
 
+// ========== ADMIN ROUTES ==========
+const AdminPage = React.lazy(() => import("./Pages/Admin"));
+
+// ========== HOTEL OWNERS ROUTES ==========
+const EditHotel = React.lazy(() => import("./Pages/HotelOwners/EditHotel"));
+
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split("/").pop()}`;
 };
@@ -54,6 +60,11 @@ function App() {
               <Route exact path={routes.addHotels} component={AddHotel} />
               <Route exact path={routes.profile} component={ProfilePage} />
               <Route exact path={routes.settings} component={SettingsPage} />
+              {/* ============= ADMIN ROUTES ============= */}
+
+              <Route exact path={routes.admin} component={AdminPage} />
+              {/* ============= HOTEL OWNERS ROUTES ============= */}
+              <Route exact path={routes.editHotel} component={EditHotel} />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

@@ -30,4 +30,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  .propertiesContainer {
+    padding: 10px;
+    img {
+      object-fit: cover;
+    }
+  }
 }

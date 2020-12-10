@@ -13,6 +13,7 @@ import {
   Form,
 } from "reactstrap";
 import { MdLocationOn, MdPerson } from "react-icons/md";
+import ImageUploader from "react-images-upload";
 
 class StepperExample extends React.Component {
   state = {
@@ -43,6 +44,11 @@ class StepperExample extends React.Component {
       return true;
     }
   };
+  onDrop(picture) {
+    this.setState({
+      pictures: this.state.pictures.concat(picture),
+    });
+  }
 
   render() {
     return (
@@ -337,7 +343,6 @@ class StepperExample extends React.Component {
                             live you can set seasonal pricing in your property
                             dashboard
                           </Label>
-
                           <Row>
                             <Col md={6} sm={12} xs={12}>
                               <FormGroup>
@@ -350,7 +355,6 @@ class StepperExample extends React.Component {
                               </FormGroup>
                             </Col>
                           </Row>
-
                           <FormGroup>
                             <Button
                               className="float-left"
@@ -838,8 +842,16 @@ class StepperExample extends React.Component {
                             <strong>Photo Gallery</strong>
                           </h8>
                         </CardHeader>
-                        <Col md={12} xs={12} sm={12}>
-                          <h1>TODO: Image uploaderq</h1>
+                        <Col sm={12} md={12} xs={12}>
+                          <ImageUploader
+                            label="Max file size: 2mb, accepted: jpg png"
+                            withIcon={true}
+                            withPreview={true}
+                            buttonText="Choose Your Hotel Pictures"
+                            onChange={this.onDrop}
+                            imgExtension={[".jpg", ".png"]}
+                            maxFileSize={2242880}
+                          />
                         </Col>
                       </Form>
                     </Card>

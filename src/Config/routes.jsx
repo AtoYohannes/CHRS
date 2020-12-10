@@ -10,4 +10,8 @@ export default {
   addHotels: "/addHotels",
   settings: "/settings",
   profile: "/profile",
+  admin: "/admin",
+  // ======== HOTEL OWNERS ROUTES
+  properties: "/properties",
+  editHotel: "/editHotel",
 };

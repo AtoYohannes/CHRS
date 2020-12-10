@@ -3,6 +3,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
 import classnames from "classnames";
 import {
   PersonalInformation,
+  Properties,
   RecentBookings,
   RecentRatings,
 } from "./components";
@@ -56,6 +57,19 @@ const Profile = (props) => {
             Recent Ratings
           </NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames(
+              { active: activeTab === "4" },
+              "text-primary"
+            )}
+            onClick={() => {
+              toggle("4");
+            }}
+          >
+            Your Properties
+          </NavLink>
+        </NavItem>
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
@@ -66,6 +80,9 @@ const Profile = (props) => {
         </TabPane>
         <TabPane tabId="3">
           <RecentRatings />
+        </TabPane>
+        <TabPane tabId="4">
+          <Properties />
         </TabPane>
       </TabContent>
     </div>

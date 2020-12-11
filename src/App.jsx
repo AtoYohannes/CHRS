@@ -27,7 +27,8 @@ const AdminPage = React.lazy(() => import("./Pages/Admin"));
 
 // ========== HOTEL OWNERS ROUTES ==========
 const EditHotel = React.lazy(() => import("./Pages/EditHotel"));
-const AllRatings = React.lazy(() => import("./Pages/RatingsAndReviews"));
+const AllRatings = React.lazy(() => import("./Pages/AllRatingsAndReviews"));
+const RecentBookings = React.lazy(() => import("./Pages/RecentBookings"));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split("/").pop()}`;
@@ -67,6 +68,11 @@ function App() {
               {/* ============= HOTEL OWNERS ROUTES ============= */}
               <Route exact path={routes.editHotel} component={EditHotel} />
               <Route exact path={routes.allRatings} component={AllRatings} />
+              <Route
+                exact
+                path={routes.recentBookings}
+                component={RecentBookings}
+              />
             </React.Suspense>
           </MainLayout>
         </React.Fragment>

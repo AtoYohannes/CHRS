@@ -44,3 +44,22 @@
     font-size: 11px;
   }
 }
+
+//========= ALL RATINGS AND REVIEWS =========
+.ratingAndReviewsContainer {
+  margin: 0 auto;
+  width: 90%;
+  box-shadow: 1px 0px 7px rgba(77, 77, 77, 0.5);
+  padding: 30px;
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .allRatings {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ratingsCard {
+    box-shadow: 1px 0px 7px rgba(77, 77, 77, 0.5);
+  }
+}

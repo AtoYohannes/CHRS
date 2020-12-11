@@ -15,4 +15,5 @@ export default {
   properties: "/properties",
   editHotel: "/editHotel",
   allRatings: "/allRatings",
+  recentBookings: "/recentBookings",
 };

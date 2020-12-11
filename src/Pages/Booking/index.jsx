@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  MdDone,
-  MdDoneAll,
-  MdLocationOn,
-  MdPerson,
-  MdStar,
-} from "react-icons/md";
+import { MdDone, MdDoneAll, MdLocationOn, MdPerson } from "react-icons/md";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -21,6 +15,7 @@ import {
   Label,
 } from "reactstrap";
 import { Intercontinental } from "../../Assets/HotelImages/HotelView";
+import RatingComponent from "../../Components/RatingComponent";
 import routes from "../../Config/routes";
 
 const Booking = () => {
@@ -52,11 +47,7 @@ const Booking = () => {
               <h6>Skylight International Hotel</h6>
             </CardTitle>
             <div className="ratings">
-              <MdStar size={30} />
-              <MdStar size={30} />
-              <MdStar size={30} />
-              <MdStar size={30} />
-              <MdStar size={30} />
+              <RatingComponent size={30} />
             </div>
 
             <CardTitle>

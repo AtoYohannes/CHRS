@@ -35,5 +35,9 @@
     img {
       object-fit: cover;
     }
+    .propertiesHeader {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

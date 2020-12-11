@@ -27,11 +27,7 @@ const Rating = () => {
           </Link>
         </CardHeader>
         <CardImg src={Skylight} />
-        {/* <CardImgOverlay className="text-light">
-          <h5>
-            <b>Ethiopian Skylight Hotel</b>
-          </h5>
-        </CardImgOverlay> */}
+
         <Col className="divi">
           <h7>
             <b>1. Rate this Property</b>

@@ -38,6 +38,8 @@ import {
   // PicturesAdd,
   RoomsAdd,
 } from "./components/Modals";
+import { Link } from "react-router-dom";
+import routes from "../../Config/routes";
 
 class EditHotel extends Component {
   constructor(props) {
@@ -225,9 +227,11 @@ class EditHotel extends Component {
             </Row>
           </CardBody>
           <CardFooter align="center">
-            <Button outline>
-              <MdSave className="mr-3" /> Save Changes
-            </Button>
+            <Link to={{ pathname: routes.singleHotel }}>
+              <Button outline>
+                <MdSave className="mr-3" /> Save Changes
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       </>

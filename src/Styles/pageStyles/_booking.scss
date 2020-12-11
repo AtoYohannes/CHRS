@@ -57,3 +57,18 @@
     }
   }
 }
+
+.recentBookingsControl {
+  margin: 0 auto;
+  width: 90%;
+  .bookingCard {
+    box-shadow: 1px 0px 5px rgba(153, 153, 153, 0.5);
+    .info {
+      padding-bottom: 10px;
+    }
+  }
+  .recentBookingFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,18 +1,34 @@
 import React from "react";
-import { MdStar } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Card, CardBody, CardHeader, CardImg, Row, Col } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardImg,
+  Row,
+  Col,
+  Button,
+} from "reactstrap";
 import {
   Intercontinental2,
   Skylight,
   Sheraton,
 } from "../../../Assets/HotelImages/HotelView";
 import routes from "../../../Config/routes";
+import { MdAdd } from "react-icons/md";
+import RatingComponent from "../../../Components/RatingComponent";
 
 const Properties = () => {
   return (
     <Card className="propertiesContainer">
-      <CardHeader>Your Properties</CardHeader>
+      <CardHeader className="propertiesHeader">
+        <div>Your Properties</div>
+        <Link to={{ pathname: routes.addHotels }}>
+          <Button outline size="sm">
+            <MdAdd /> Add Your Hotel / Property
+          </Button>
+        </Link>
+      </CardHeader>
       <CardBody>
         <Row>
           <Col md={6} sm={12} xs={12}>
@@ -24,12 +40,15 @@ const Properties = () => {
                 <CardImg src={Intercontinental2} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar />
-                  <small className="text-rating ml-3">(2343234 Ratings)</small>
+                  <Col>
+                    <Row>
+                      <RatingComponent />
+                      <small className="text-rating ml-3">
+                        (2343234 Ratings)
+                      </small>
+                    </Row>
+                  </Col>
+
                   <div>
                     <small>Registered on dd/mm/yyyy</small>
                   </div>
@@ -46,12 +65,14 @@ const Properties = () => {
                 <CardImg src={Skylight} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar />
-                  <small className="text-rating ml-3">(2343234 Ratings)</small>
+                  <Col>
+                    <Row>
+                      <RatingComponent />
+                      <small className="text-rating ml-3">
+                        (2343234 Ratings)
+                      </small>
+                    </Row>
+                  </Col>
                   <div>
                     <small>Registered on dd/mm/yyyy</small>
                   </div>
@@ -68,12 +89,14 @@ const Properties = () => {
                 <CardImg src={Sheraton} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar color="gold" />
-                  <MdStar />
-                  <small className="text-rating ml-3">(2343234 Ratings)</small>
+                  <Col>
+                    <Row>
+                      <RatingComponent />
+                      <small className="text-rating ml-3">
+                        (2343234 Ratings)
+                      </small>
+                    </Row>
+                  </Col>
                   <div>
                     <small>Registered on dd/mm/yyyy</small>
                   </div>

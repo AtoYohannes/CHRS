@@ -10,9 +10,10 @@ import {
   Button,
 } from "reactstrap";
 import { Intercontinental } from "../Assets/HotelImages/HotelView";
-import { MdArrowForward, MdPinDrop, MdStar } from "react-icons/md";
+import { MdArrowForward, MdPinDrop } from "react-icons/md";
 import { Link } from "react-router-dom";
 import routes from "../Config/routes";
+import RatingComponent from "./RatingComponent";
 
 const AllHotelsComponent = () => {
   return (
@@ -28,11 +29,7 @@ const AllHotelsComponent = () => {
                 <CardHeader>
                   <div>
                     <h8>Skylight International Hotel</h8>
-                    <MdStar color="gold" />
-                    <MdStar color="gold" />
-                    <MdStar color="gold" />
-                    <MdStar color="gold" />
-                    <MdStar color="gold" />
+                    <RatingComponent />
                   </div>
                 </CardHeader>
                 <CardBody>

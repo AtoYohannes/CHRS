@@ -12,7 +12,8 @@ import {
   Row,
 } from "reactstrap";
 import Avatar from "../../Components/Avatar";
-
+import { Link } from "react-router-dom";
+import routes from "../../Config/routes";
 const Settings = () => {
   return (
     <Card className="settingsContainer">
@@ -52,7 +53,9 @@ const Settings = () => {
       </CardBody>
 
       <CardFooter align="center">
-        <Button outline>Save Changes</Button>
+        <Link to={{ pathname: routes.profile }}>
+          <Button outline>Save Changes</Button>
+        </Link>
       </CardFooter>
     </Card>
   );

@@ -1,7 +1,8 @@
 import React from "react";
-import { MdEdit, MdPinDrop, MdStar, MdStarBorder } from "react-icons/md";
+import { MdCreditCard, MdEdit, MdPinDrop, MdStarBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Col, Row, Button } from "reactstrap";
+import RatingComponent from "../../../Components/RatingComponent";
 import routes from "../../../Config/routes";
 
 const Header = () => {
@@ -18,12 +19,12 @@ const Header = () => {
             </Col>
             <Col>
               <div className="ratings">
-                <MdStar />
-                <MdStar />
-                <MdStar />
-                <MdStar />
-                <MdStar />
-                <small>2,837,3527 Ratings</small>
+                <Row>
+                  <RatingComponent />
+                  <Col>
+                    <small>2,837 Ratings</small>
+                  </Col>
+                </Row>
               </div>
             </Col>
           </Row>
@@ -38,19 +39,25 @@ const Header = () => {
           <Link to={{ pathname: routes.rating }}>
             <Button className="m-1">
               <MdStarBorder size={20} className="text-light" />{" "}
-              <b className="text-light">RATE</b>
+              <b className="text-light">Rate</b>
             </Button>
           </Link>
           <Link to={{ pathname: routes.editHotel }}>
             <Button className="m-1">
               <MdEdit size={20} className="text-light" />{" "}
-              <b className="text-light">EDIT</b>
+              <b className="text-light">Edit</b>
             </Button>
           </Link>
           <Link to={{ pathname: routes.allRatings }}>
             <Button className="m-1">
               <MdEdit size={20} className="text-light" />{" "}
-              <b className="text-light">SEE RATINGS</b>
+              <b className="text-light">See Ratings</b>
+            </Button>
+          </Link>
+          <Link to={{ pathname: routes.recentBookings }}>
+            <Button className="m-1">
+              <MdCreditCard size={20} className="text-light" />{" "}
+              <b className="text-light">Recent Reservations</b>
             </Button>
           </Link>
         </Col>

@@ -10,10 +10,16 @@ export default {
   addHotels: "/addHotels",
   settings: "/settings",
   profile: "/profile",
-  admin: "/admin",
+
   // ======== HOTEL OWNERS ROUTES
   properties: "/properties",
   editHotel: "/editHotel",
   allRatings: "/allRatings",
   recentBookings: "/recentBookings",
+
+  // ======== ADMINISTRATOR ROUTES
+  admin: "/admin",
+  customersManagement: "/customersManagement",
+  hotelsManagement: "/hotelsManagement",
+  pendingHotelRequests: "/pendingHotelRequests",
 };

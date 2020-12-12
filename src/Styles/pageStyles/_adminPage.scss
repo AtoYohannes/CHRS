@@ -1,0 +1,35 @@
+.adminContainer {
+  margin: 0 auto;
+  width: 95%;
+  .categoriesCard {
+    box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 1);
+  }
+}
+
+.hotelPendingRequestContainer {
+  margin: 0 auto;
+  width: 95%;
+
+  padding: 30px;
+  .hotelPendingRequestCard {
+    box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 1);
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+      b {
+        margin-right: 6px;
+      }
+    }
+    img {
+      box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 1);
+      height: 120px;
+      object-fit: cover;
+    }
+    .hotelPendingFooter {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

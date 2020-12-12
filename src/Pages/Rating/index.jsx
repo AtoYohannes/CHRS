@@ -10,7 +10,7 @@ import {
   CardHeader,
 } from "reactstrap";
 import { Skylight } from "../../Assets/HotelImages/HotelView";
-import { MdArrowBack, MdFace, MdPerson, MdTagFaces } from "react-icons/md";
+import { MdFace, MdPerson, MdTagFaces } from "react-icons/md";
 import { FaRegAngry } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import routes from "../../Config/routes";
@@ -19,15 +19,8 @@ const Rating = () => {
   return (
     <div className="ratingsContainer">
       <Card className="p-2 mb-2">
-        <CardHeader>
-          <Link to={{ pathname: routes.singleHotel }}>
-            <Button size="sm" outline>
-              <MdArrowBack /> Back to Hotel View
-            </Button>
-          </Link>
-        </CardHeader>
+        <CardHeader>Hotel Name Goes Here</CardHeader>
         <CardImg src={Skylight} />
-
         <Col className="divi">
           <h7>
             <b>1. Rate this Property</b>

@@ -1,8 +1,13 @@
 .ratingsContainer {
   margin: 0 auto;
-  width: 40%;
+  width: 95%;
+
+  button:hover {
+    transform: scale(1.2);
+  }
+
   img {
-    height: 250px;
+    height: 200px;
     object-fit: cover;
   }
   .divi {

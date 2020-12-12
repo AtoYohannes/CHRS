@@ -24,6 +24,15 @@ const ProfilePage = React.lazy(() => import("./Pages/ProfilePage"));
 
 // ========== ADMIN ROUTES ==========
 const AdminPage = React.lazy(() => import("./Pages/Admin"));
+const CustomersManagement = React.lazy(() =>
+  import("./Pages/Admin/components/CustomersManagement")
+);
+const HotelsManagement = React.lazy(() =>
+  import("./Pages/Admin/components/HotelsManagement")
+);
+const PendingPropertyRequests = React.lazy(() =>
+  import("./Pages/Admin/components/PendingPropertyRequests")
+);
 
 // ========== HOTEL OWNERS ROUTES ==========
 const EditHotel = React.lazy(() => import("./Pages/EditHotel"));
@@ -63,8 +72,23 @@ function App() {
               <Route exact path={routes.profile} component={ProfilePage} />
               <Route exact path={routes.settings} component={SettingsPage} />
               {/* ============= ADMIN ROUTES ============= */}
-
               <Route exact path={routes.admin} component={AdminPage} />
+              <Route
+                exact
+                path={routes.customersManagement}
+                component={CustomersManagement}
+              />
+              <Route
+                exact
+                path={routes.pendingHotelRequests}
+                component={PendingPropertyRequests}
+              />
+              <Route
+                exact
+                path={routes.hotelsManagement}
+                component={HotelsManagement}
+              />
+
               {/* ============= HOTEL OWNERS ROUTES ============= */}
               <Route exact path={routes.editHotel} component={EditHotel} />
               <Route exact path={routes.allRatings} component={AllRatings} />

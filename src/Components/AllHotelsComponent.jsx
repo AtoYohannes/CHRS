@@ -18,14 +18,14 @@ import RatingComponent from "./RatingComponent";
 const AllHotelsComponent = () => {
   return (
     <div>
-      <Card className="border-0 bg-background">
+      <Card className="border-0 ">
         <CardBody>
-          <Card row className="AllItemsHotelContainer">
+          <Card row className="AllItemsHotelContainer shadows zoom">
             <Row>
-              <Col md={3} sm={12} xs={12}>
+              <Col md={4} sm={12} xs={12}>
                 <CardImg src={Intercontinental} />
               </Col>
-              <Col md={6} sm={12} xs={12}>
+              <Col md={5} sm={12} xs={12}>
                 <CardHeader>
                   <div>
                     <h8>Skylight International Hotel</h8>

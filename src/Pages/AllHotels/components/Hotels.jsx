@@ -5,6 +5,8 @@ import {
   PaginationLink,
   PaginationItem,
   Col,
+  Card,
+  CardBody,
 } from "reactstrap";
 
 import { AllHotelsComponent } from "../../../Components";
@@ -12,10 +14,15 @@ import { AllHotelsComponent } from "../../../Components";
 const HotelComponent = () => {
   return (
     <div>
-      <CardHeader>Hotels in Our Database</CardHeader>
-      <AllHotelsComponent />
-      <AllHotelsComponent />
-      <AllHotelsComponent />
+      <Card>
+        <CardHeader>Hotels in Our Database</CardHeader>
+        <CardBody>
+          <AllHotelsComponent />
+          <AllHotelsComponent />
+          <AllHotelsComponent />
+        </CardBody>
+      </Card>
+
       <Col md={12} sm={12} xs={12}>
         <Pagination aria-label="Page navigation example">
           <PaginationItem>

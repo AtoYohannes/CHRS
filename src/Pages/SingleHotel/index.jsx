@@ -9,7 +9,7 @@ import {
 
 const Index = () => {
   return (
-    <div className="singleHotel">
+    <div className="singleHotel bg-light">
       <Header />
       <HotelImagesContainer />
       <HotelInformation />

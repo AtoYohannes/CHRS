@@ -16,7 +16,7 @@ const Services = () => {
       </CardHeader>
       <Row>
         <Col md={12} sm={12} xs={12}>
-          <Card className="p-3 mt-1">
+          <Card className="p-3 mt-1 shadows">
             <Label>is Parking Available for Guests?</Label>
             <Row>
               <Col md={3} sm={12} xs={12}>
@@ -47,7 +47,7 @@ const Services = () => {
           </Card>
         </Col>
         <Col md={12} sm={12} xs={12}>
-          <Card className="p-3 mt-1">
+          <Card className="p-3 mt-1 shadows">
             <Label>
               <b>Breakfast </b>
             </Label>
@@ -76,7 +76,7 @@ const Services = () => {
           </Card>
         </Col>
         <Col md={12} sm={12} xs={12}>
-          <Card className="p-3 mt-1">
+          <Card className="p-3 mt-1 shadows">
             <Label>
               <b>Languages Spoken </b>
             </Label>

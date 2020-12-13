@@ -1,13 +1,21 @@
 import React from "react";
-import { MdCheckCircle, MdRemoveFromQueue } from "react-icons/md";
-import { Card, CardHeader, Col, Row } from "reactstrap";
+import { MdCheckCircle, MdPerson, MdRemoveFromQueue } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { Button, Card, CardHeader, Col, Row } from "reactstrap";
+import routes from "../../Config/routes";
 import { BookingComponent } from "./components";
 
 const RecentBookings = () => {
   return (
-    <Card className="p-3 recentBookingsControl">
-      <CardHeader align="center">
+    <Card className="p-3 mt-2 recentBookingsContainer">
+      <CardHeader className="recentBookingsContainerHeader">
         <h6>Recent Reservations to (Hotel Name)</h6>
+        <Link to={{ pathname: routes.customers }}>
+          <Button outline>
+            <MdPerson className="mr-2" />
+            See your Customers
+          </Button>
+        </Link>
       </CardHeader>
       <hr />
 

@@ -7,7 +7,7 @@ import {
   MdVisibility,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Col, Row, Button } from "reactstrap";
+import { Col, Row, Button, Card } from "reactstrap";
 import RatingComponent from "../../../Components/RatingComponent";
 import routes from "../../../Config/routes";
 import { BackDrop, SlidingDrawer } from "../../../Components/Drawer";
@@ -41,7 +41,7 @@ class Header extends React.Component {
     }
 
     return (
-      <div className="singleHotelHeader">
+      <Card className="singleHotelHeader">
         <SlidingDrawer show={this.state.drawerOpen} type={this.state.type} />
         {backdrop}
 
@@ -102,7 +102,7 @@ class Header extends React.Component {
             </Link>
           </Col>
         </Row>
-      </div>
+      </Card>
     );
   }
 }

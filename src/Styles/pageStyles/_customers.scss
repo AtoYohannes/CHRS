@@ -1,0 +1,24 @@
+.customersContainer {
+  margin: 0 auto;
+  width: 95%;
+  .customerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    .customerCardHeader {
+      display: flex;
+      justify-content: space-between;
+      button {
+        border-radius: 50px;
+      }
+    }
+    .customerCardBody {
+      display: flex;
+      justify-content: space-between;
+      button {
+        border: none;
+      }
+    }
+  }
+}

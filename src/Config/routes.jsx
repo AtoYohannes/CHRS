@@ -16,6 +16,7 @@ export default {
   editHotel: "/editHotel",
   allRatings: "/allRatings",
   recentBookings: "/recentBookings",
+  customers: "/customers",
 
   // ======== ADMINISTRATOR ROUTES
   admin: "/admin",

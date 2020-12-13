@@ -9,11 +9,9 @@
 .hotelPendingRequestContainer {
   margin: 0 auto;
   width: 95%;
-
   padding: 30px;
   .hotelPendingRequestCard {
     box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 1);
-
     .info {
       display: flex;
       flex-direction: row;

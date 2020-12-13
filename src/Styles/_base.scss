@@ -62,4 +62,7 @@ button,
     background-color: inherit;
     border-radius: 0;
   }
+  .shadows {
+    box-shadow: 3px 3px 3px darken($color: #d4d4d4, $amount: 3);
+  }
 }

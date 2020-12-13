@@ -180,7 +180,6 @@ const PendingHotelRequests = () => {
               </CardFooter>
             </Card>
           </Col>
-
           <Col md={6} sm={12} xs={12}>
             <Card className="p-3 mb-3 ml-3 mr-3 hotelPendingRequestCard">
               <CardHeader>Skylight International Hotel</CardHeader>

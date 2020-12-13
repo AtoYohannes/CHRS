@@ -58,9 +58,13 @@
   }
 }
 
-.recentBookingsControl {
+.recentBookingsContainer {
   margin: 0 auto;
   width: 90%;
+  .recentBookingsContainerHeader {
+    display: flex;
+    justify-content: space-between;
+  }
   .bookingCard {
     box-shadow: 1px 0px 5px rgba(153, 153, 153, 0.5);
     .info {

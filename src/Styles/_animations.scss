@@ -36,14 +36,13 @@
   img {
     transition: 2s;
   }
-  transition: 1s;
-  box-shadow: 5px 5px 5px darken($color: #d4d4d4, $amount: 3);
+  transition: 0.5s;
 }
 
 .zoom:hover {
   img {
     transform: scale(1.03);
   }
-  transform: scale(1.02);
+  transform: scale(1.001);
   box-shadow: 12px 12px 10px darken($color: #d4d4d4, $amount: 2);
 }

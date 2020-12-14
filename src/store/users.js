@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import { apiCallBegan } from "./api";
-import { setUser, getUser, getToken, setToken } from "../services/usersService";
+import { setUser, getUser, getToken, setToken } from "../services/authService";
 
 const slice = createSlice({
   name: "users",

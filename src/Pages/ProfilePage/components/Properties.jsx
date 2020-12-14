@@ -36,7 +36,7 @@ const Properties = () => {
               style={{ textDecoration: "none" }}
               to={{ pathname: routes.singleHotel }}
             >
-              <Card className="zoom mb-3">
+              <Card className="shadows zoom mb-3">
                 <CardImg src={Intercontinental2} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>
@@ -48,7 +48,6 @@ const Properties = () => {
                       </small>
                     </Row>
                   </Col>
-
                   <div>
                     <small>Registered on dd/mm/yyyy</small>
                   </div>
@@ -61,7 +60,7 @@ const Properties = () => {
               style={{ textDecoration: "none" }}
               to={{ pathname: routes.singleHotel }}
             >
-              <Card className="zoom mb-3">
+              <Card className="shadows zoom mb-3">
                 <CardImg src={Skylight} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>
@@ -85,7 +84,7 @@ const Properties = () => {
               style={{ textDecoration: "none" }}
               to={{ pathname: routes.singleHotel }}
             >
-              <Card className="zoom mb-3">
+              <Card className="shadows zoom mb-3">
                 <CardImg src={Sheraton} />
                 <CardHeader>Intercontinental International Hotel</CardHeader>
                 <CardBody>

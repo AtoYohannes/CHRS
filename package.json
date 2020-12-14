@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.0",
     "bootstrap": "4.5.0",
     "bulma": "^0.9.0",
     "bulma-helpers": "^0.3.12",
@@ -14,6 +16,7 @@
     "material-design-icons-iconfont": "^5.0.1",
     "material-icons": "^0.3.1",
     "mdbreact": "^5.0.0",
+    "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-animated-slider": "^2.0.0",
@@ -33,7 +36,8 @@
     "react-sizeme": "^2.6.12",
     "reactjs-pdf-reader": "^1.0.12",
     "reactstrap": "^8.5.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "store": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",

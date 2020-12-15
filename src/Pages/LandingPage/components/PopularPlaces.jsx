@@ -7,6 +7,7 @@ import {
   Sheraton,
   Eleli,
 } from "../../../Assets/HotelImages/HotelView";
+import RatingComponent from "../../../Components/RatingComponent";
 
 const PopularPlaces = () => {
   return (
@@ -20,25 +21,37 @@ const PopularPlaces = () => {
           <Col md={3} sm={12} xs={12}>
             <Card className="shadows zoom">
               <CardImg src={Intercontinental} />
-              <CardHeader className="border-0">Something</CardHeader>
+              <CardHeader className="border-0">
+                Hotel Name
+                <RatingComponent />
+              </CardHeader>
             </Card>
           </Col>
           <Col md={3} sm={12} xs={12}>
             <Card className="shadows zoom">
               <CardImg src={Skylight} />
-              <CardHeader className="border-0">Something</CardHeader>
+              <CardHeader className="border-0">
+                Hotel Name
+                <RatingComponent />
+              </CardHeader>
             </Card>
           </Col>
           <Col md={3} sm={12} xs={12}>
             <Card className="shadows zoom">
               <CardImg src={Sheraton} />
-              <CardHeader className="border-0">Something</CardHeader>
+              <CardHeader className="border-0">
+                Hotel Name
+                <RatingComponent />
+              </CardHeader>
             </Card>
           </Col>
           <Col md={3} sm={12} xs={12}>
             <Card className="shadows zoom">
               <CardImg src={Eleli} />
-              <CardHeader className="border-0">Something</CardHeader>
+              <CardHeader className="border-0">
+                Hotel Name
+                <RatingComponent />
+              </CardHeader>
             </Card>
           </Col>
         </Row>

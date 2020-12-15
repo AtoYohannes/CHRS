@@ -88,9 +88,9 @@ const hotel = [
 
 const Hotels = ({ text, location, image }) => {
   return (
-    <Card className="menu-item bg-background">
+    <Card className="menu-item shadows zoom">
       <CardImg src={image} />
-      <CardTitle className="border-0 bg-background mt-2">
+      <CardTitle className="mt-2">
         <Col>
           <b>{text}</b>
         </Col>

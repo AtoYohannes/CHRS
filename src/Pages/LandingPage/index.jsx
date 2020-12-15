@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Booking, Explore } from "./components";
+import { Card } from "reactstrap";
+import { AboutUs, Booking, Explore, PopularPlaces } from "./components";
 
 class LandingPage extends Component {
   constructor(props) {
@@ -8,10 +9,16 @@ class LandingPage extends Component {
   }
   render() {
     return (
-      <div className="landingPageContainer">
-        <Booking />
-        <Explore />
-      </div>
+      <>
+        <Card>
+          <div className="landingPageContainer">
+            <Booking />
+            <Explore />
+            <PopularPlaces />
+          </div>
+          <AboutUs />
+        </Card>
+      </>
     );
   }
 }

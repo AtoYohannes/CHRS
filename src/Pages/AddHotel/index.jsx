@@ -14,6 +14,8 @@ import {
 } from "reactstrap";
 import { MdLocationOn, MdPerson } from "react-icons/md";
 import ImageUploader from "react-images-upload";
+import { Link } from "react-router-dom";
+import routes from "../../Config/routes";
 
 class StepperExample extends React.Component {
   state = {
@@ -864,14 +866,17 @@ class StepperExample extends React.Component {
                       >
                         Previous
                       </Button>
-                      <Button
-                        color="success"
-                        rounded
-                        className="float-right"
-                        onClick={this.handleSubmission}
-                      >
-                        Submit Hotel
-                      </Button>
+                      <Link to={{ pathname: routes.pending }}>
+                        <Button
+                          color="success"
+                          rounded
+                          className="float-right"
+                          //TODO : Make sure you submit the Data before proceeding to the pending page
+                          // onClick={this.handleSubmission}
+                        >
+                          Submit Hotel
+                        </Button>
+                      </Link>
                     </FormGroup>
                   </>
                 )}

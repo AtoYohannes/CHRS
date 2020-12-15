@@ -1,7 +1,24 @@
 import axios from "axios";
 import * as actions from "../api";
+import { getToken } from "../../services/authService";
 
-const api = ({ dispatch }) => next => async action => {
+const token = getToken();
+console.log("token", token);
+if (token) axios.defaults.headers.common["x-auth-token"] = `${token}`;
+axios.defaults.baseURL = "http://localhost:3000/api";
+axios.interceptors.response.use(null, (error) => {
+  const expectedError =
+    error.response &&
+    error.response.status >= 400 &&
+    error.response.status < 500;
+  if (!expectedError) {
+    console.log(error); // log error
+    // toast.error("An unexpected error occurred."); //display a genereic message
+  }
+  return Promise.reject(error);
+});
+
+const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== actions.apiCallBegan.type) return next(action);
 
   const { url, method, data, onStart, onSuccess, onError } = action.payload;
@@ -12,10 +29,9 @@ const api = ({ dispatch }) => next => async action => {
 
   try {
     const response = await axios.request({
-      baseURL: "http://localhost:9001/api",
       url,
       method,
-      data
+      data,
     });
     // General
     dispatch(actions.apiCallSuccess(response.data));

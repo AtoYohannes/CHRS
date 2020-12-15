@@ -5,7 +5,7 @@ import Input from "./input";
 import CheckBox from "./checkbox";
 import Select from "./select";
 import Toast from "./toast";
-import LoadingSpinner from "../../components/PageSpinner";
+import LoadingSpinner from "../../Components/PageSpinner";
 import _ from "lodash";
 
 class Form extends Toast {
@@ -71,13 +71,7 @@ class Form extends Toast {
   renderButton(label, loader = false) {
     return (
       !this.props.disabled && (
-        <Button
-          size="sm"
-          outline
-          className="pr-3 pl-3"
-          color="primary"
-          disabled={this.validate || this.props.loading}
-        >
+        <Button size="sm" block disabled={this.validate || this.props.loading}>
           {this.props.loading || loader ? <LoadingSpinner /> : label}
         </Button>
       )

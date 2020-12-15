@@ -17,6 +17,7 @@ const slice = createSlice({
       users.loading = true;
     },
     userReceived: (users, action) => {
+      alert();
       const { user, token } = action.payload;
       setToken(token);
       setUser(user);

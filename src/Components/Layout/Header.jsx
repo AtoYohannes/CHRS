@@ -30,6 +30,8 @@ import { Link } from "react-router-dom";
 import Avatar from "../Avatar";
 import UserCard from "../Card/UserCard";
 
+import { getUser } from "../../services/authService";
+
 const bem = bn.create("header");
 
 class Header extends React.Component {
@@ -156,20 +158,24 @@ class Header extends React.Component {
                   </Link>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to={{ pathname: routes.signUp }}>
-                    <Button color="light">SignUp</Button>
-                  </Link>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to={{ pathname: routes.signIn }}>
-                    <Button color="light">SignIn</Button>
-                  </Link>
-                </NavLink>
-              </NavItem>
+              {!getUser() && (
+                <>
+                  <NavItem>
+                    <NavLink>
+                      <Link to={{ pathname: routes.signUp }}>
+                        <Button color="light">SignUp</Button>
+                      </Link>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink>
+                      <Link to={{ pathname: routes.signIn }}>
+                        <Button color="light">SignIn</Button>
+                      </Link>
+                    </NavLink>
+                  </NavItem>
+                </>
+              )}
               <NavItem>
                 <NavLink id="Popover2">
                   <>

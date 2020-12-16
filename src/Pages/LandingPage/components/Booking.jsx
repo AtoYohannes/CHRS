@@ -13,9 +13,9 @@ class Explore extends Component {
       <div className="bookingContainer">
         <div className="labels">
           <h6>
-            <b>Find deals on hotels, homes, and much more...</b>{" "}
+            <b>Find deals on Hotels, Guest houses, and much more...</b>{" "}
           </h6>
-          <small>From cozy country homes to funky city apartments</small>
+          <small>From country rental places to fancy city Hotels</small>
         </div>
         <hr />
         <Col align="center">

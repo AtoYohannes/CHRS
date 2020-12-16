@@ -9,22 +9,18 @@ import {
   CardHeader,
   FormGroup,
   Label,
-  Input,
   Form,
 } from "reactstrap";
-import { MdLocationOn, MdPerson } from "react-icons/md";
-import ImageUploader from "react-images-upload";
+import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
 import routes from "../../Config/routes";
 import Joi from "joi-browser";
-
 import ParentForm from "../common/form";
 import { getBedTypes, loadbedTypes } from "../../store/bedTypes";
 import { getRoomTypes, loadroomTypes } from "../../store/roomTypes";
 import { getRoomNames, loadroomNames } from "../../store/roomNames";
 import { connect } from "react-redux";
 import { getFacilitys, loadfacilitys } from "../../store/facilities";
-
 import { upload } from "../../services/uploadService";
 import { toast } from "react-toastify";
 import { addHotel } from "../../store/hotels";
@@ -47,7 +43,6 @@ class StepperExample extends ParentForm {
       language: "",
       isChildrenAllowed: "",
       isPetsAllowed: "",
-
       roomName: "",
       roomType: "",
       bedType: "",
@@ -75,7 +70,6 @@ class StepperExample extends ParentForm {
     isChildrenAllowed: Joi.string(),
     isPetsAllowed: Joi.string(),
     pictures: Joi.array(),
-
     roomName: Joi.string(),
     roomType: Joi.string(),
     bedType: Joi.string(),
@@ -152,8 +146,8 @@ class StepperExample extends ParentForm {
 
   render() {
     return (
-      <div className="addHotelContainer">
-        <Card>
+      <div className="addHotel p-5">
+        <Card className="addHotelContainer shadows mb-5">
           <CardHeader align="center">Add your Hotel</CardHeader>
           <CardBody>
             <Row className="pt-5 justify-content-center">
@@ -418,7 +412,7 @@ class StepperExample extends ParentForm {
                             </small>
                           </Label>
                           <Row>
-                            <Col md={4}>
+                            <Col md={12}>
                               {this.renderSelect(
                                 "isParkingAvailable",
                                 "Is Parking Available for guests?",
@@ -504,11 +498,10 @@ class StepperExample extends ParentForm {
                       </h6>
                       <small>
                         You are nearly done. We just need a few more details
-                        about the amenities or specific features and services
-                        available
+                        about the or specific features and services available
                       </small>
                       <hr />
-                      <Card className="p-3 mb-3 amenities" md={12}>
+                      <Card className="p-3 mb-3 " md={12}>
                         <CardHeader>
                           <h8>
                             <strong>Amenities</strong>
@@ -548,13 +541,13 @@ class StepperExample extends ParentForm {
                         pets?
                       </small>
                       <hr />
-                      <Card className="p-3 mb-3 amenities" md={12}>
+                      <Card className="p-3 mb-3 " md={12}>
                         <CardHeader>
                           <h8>
                             <strong>Children</strong>
                           </h8>
                         </CardHeader>
-                        <Col md={3} xs={12} sm={12}>
+                        <Col md={12} xs={12} sm={12}>
                           {this.renderSelect(
                             "isChildrenAllowed",
                             "Can you Accomodate children?",
@@ -563,7 +556,7 @@ class StepperExample extends ParentForm {
                         </Col>
                       </Card>
                       <hr />
-                      <Card className="p-3 mb-3 amenities" md={12}>
+                      <Card className="p-3 mb-3 " md={12}>
                         <CardHeader>
                           <h8>
                             <strong>Pets</strong>
@@ -575,7 +568,7 @@ class StepperExample extends ParentForm {
                             indicate if you allow pets.
                           </Label>
                           <Row>
-                            <Col md={3} sm={12} xs={12}>
+                            <Col md={12} sm={12} xs={12}>
                               {this.renderSelect(
                                 "isPetsAllowed",
                                 "Do you allow Pets?",
@@ -616,7 +609,7 @@ class StepperExample extends ParentForm {
                         website
                       </small>
                       <hr />
-                      <Card className="p-3 mb-3 amenities" md={12}>
+                      <Card className="p-3 mb-3 " md={12}>
                         <CardHeader>
                           <h8>
                             <strong>Photo Gallery</strong>

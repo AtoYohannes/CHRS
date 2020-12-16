@@ -1,42 +1,46 @@
 import React from "react";
-import { Progress } from "reactstrap";
+import { MdFileUpload } from "react-icons/md";
+import {
+  Button,
+  Col,
+  Input,
+  Progress,
+  Card,
+  Label,
+  CardBody,
+} from "reactstrap";
 
 const FileInput = ({ name, value, label, onChange, onClick, selectedFile }) => {
   return (
-    <React.Fragment>
-      <label htmlFor={name}>{label}</label>
+    <Card className="border-0">
+      <Label htmlFor={name}>{label}</Label>
       <div className="input-group">
-        <div className="custom-file">
-          <input
-            type="file"
-            className="custom-file-input"
-            onChange={onChange}
-          />
-          <label className="custom-file-label">
-            {selectedFile ? selectedFile.name : "Choose file"}
-          </label>
-        </div>
-        <div className="input-group-append">
-          <button
-            className="btn btn-outline-secondary"
-            type="button"
-            onClick={onClick}
-          >
+        <CardBody>
+          <div className="valid-feedback">
+            <Progress color="success" value={value}>
+              {Math.round(value, 2)}%
+            </Progress>
+          </div>
+          <Col className="custom-file">
+            <Input
+              type="file"
+              className="custom-file-input"
+              onChange={onChange}
+            />
+            <label className="custom-file-label">
+              {selectedFile ? selectedFile.name : "Choose file"}
+            </label>
+          </Col>
+        </CardBody>
+
+        <Col md={12} sm={12} xs={12} align="center">
+          <Button outline onClick={onClick}>
+            <MdFileUpload className="mr-2" />
             Upload
-          </button>
-        </div>
-        <div className="valid-feedback" style={{ display: "block" }}>
-          <Progress
-            max="100"
-            color="success"
-            value={value}
-            style={{ marginBottom: 5 }}
-          >
-            {Math.round(value, 2)}%
-          </Progress>
-        </div>
+          </Button>
+        </Col>
       </div>
-    </React.Fragment>
+    </Card>
   );
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import "./Styles/chrs.scss";
 // import "react-animated-slider/build/horizontal.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import routes from "./Config/routes";
 import { Spinner } from "reactstrap";

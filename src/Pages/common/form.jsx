@@ -334,16 +334,14 @@ class Form extends Toast {
 
   renderFileInput(name, label) {
     return (
-      <React.Fragment>
-        <FileInput
-          name={name}
-          label={label}
-          onChange={this.handleUploadChange}
-          onClick={this.handleUpload}
-          value={this.state.loaded}
-          selectedFile={this.state.selectedFile}
-        ></FileInput>
-      </React.Fragment>
+      <FileInput
+        name={name}
+        label={label}
+        onChange={this.handleUploadChange}
+        onClick={this.handleUpload}
+        value={this.state.loaded}
+        selectedFile={this.state.selectedFile}
+      />
     );
   }
   getFormData(file) {

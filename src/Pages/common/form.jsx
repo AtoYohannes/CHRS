@@ -1,12 +1,14 @@
 import React from "react";
 import Joi from "joi-browser";
-import { Button } from "reactstrap";
+import { Button, FormGroup, Label, Input as ReactstrapInput } from "reactstrap";
 import Input from "./input";
 import CheckBox from "./checkbox";
 import Select from "./select";
 import Toast from "./toast";
 import LoadingSpinner from "../../Components/PageSpinner";
 import _ from "lodash";
+
+import FileInput from "./fileInput";
 
 class Form extends Toast {
   state = {
@@ -109,6 +111,32 @@ class Form extends Toast {
         invalid={_.get(errors, props.name) ? true : false}
         disabled={this.props.disabled}
       />
+    );
+  }
+
+  handleCheckBoxChange = (name, label) => (e) => {
+    const data = { ...this.state.data };
+    if (e.target.checked) {
+      data[name].push(label);
+    } else {
+      data[name] = data[name].filter((e) => e !== label);
+    }
+    this.setState({ data });
+    console.log(label, e.target.checked);
+  };
+
+  renderCheckbox2(name, label) {
+    return (
+      <FormGroup check>
+        <Label check>
+          <ReactstrapInput
+            type="checkbox"
+            id="checkbox2"
+            onChange={this.handleCheckBoxChange(name, label)}
+          />
+          {label}
+        </Label>
+      </FormGroup>
     );
   }
 
@@ -295,6 +323,43 @@ class Form extends Toast {
     } else {
       return lines;
     }
+  }
+
+  handleUploadChange = (event) => {
+    this.setState({
+      selectedFile: event.target.files[0],
+      loaded: 0,
+    });
+  };
+
+  renderFileInput(name, label) {
+    return (
+      <React.Fragment>
+        <FileInput
+          name={name}
+          label={label}
+          onChange={this.handleUploadChange}
+          onClick={this.handleUpload}
+          value={this.state.loaded}
+          selectedFile={this.state.selectedFile}
+        ></FileInput>
+      </React.Fragment>
+    );
+  }
+  getFormData(file) {
+    const data = new FormData();
+    data.append("file", file);
+    return data;
+  }
+  getProgressConfig() {
+    const config = {
+      onUploadProgress: (ProgressEvent) => {
+        this.setState({
+          loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100,
+        });
+      },
+    };
+    return config;
   }
 }
 

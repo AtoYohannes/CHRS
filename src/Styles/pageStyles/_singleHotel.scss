@@ -1,5 +1,12 @@
 .singleHotel {
-  .singleHotelImages {
+  background: url("../../Assets/BackgroundImages/Background3.png");
+  min-height: 110.1vh;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  2 .singleHotelImages {
     img {
       height: 500px;
       object-fit: cover;

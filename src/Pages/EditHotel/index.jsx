@@ -136,7 +136,7 @@ class EditHotel extends Component {
         >
           <ModalHeader toggle={toggle}>Add More Images</ModalHeader>
           <ModalBody>
-            {" "}
+            {/* // TODO: Both the Components for Image and Room adding are done */}
             {/* <PicturesAdd /> */}
             <RoomsAdd />
           </ModalBody>

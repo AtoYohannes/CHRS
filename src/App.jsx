@@ -43,6 +43,7 @@ const EditHotel = React.lazy(() => import("./Pages/EditHotel"));
 const AllRatings = React.lazy(() => import("./Pages/AllRatingsAndReviews"));
 const RecentBookings = React.lazy(() => import("./Pages/RecentBookings"));
 const Customers = React.lazy(() => import("./Pages/Customers"));
+const Pending = React.lazy(() => import("./Pages/AddHotel/components/Pending"));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split("/").pop()}`;
@@ -122,6 +123,7 @@ function App() {
                   component={RecentBookings}
                 />
                 <Route exact path={routes.customers} component={Customers} />
+                <Route exact path={routes.pending} component={Pending} />
               </React.Suspense>
             </MainLayout>
           </React.Fragment>

@@ -17,6 +17,7 @@ export default {
   allRatings: "/hotel-admin/all-ratings",
   recentBookings: "/hotel-admin/recent-bookings",
   customers: "/hotel-admin/customers",
+  pending: "/hotel-admin/pending-hotel-request",
 
   // ======== ADMINISTRATOR ROUTES
   admin: "/super-admin",

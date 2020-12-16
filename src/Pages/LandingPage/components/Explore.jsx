@@ -151,7 +151,7 @@ class Booking extends Component {
         <div className="divider">
           <div>
             <h6>Hotels</h6>
-            <h7>These popular destinations have a lot to offer</h7>
+            <h7>These destinations / Hotels have a lot to offer</h7>
           </div>
         </div>
 

@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: none;
-  2 .singleHotelImages {
+  .singleHotelImages {
     img {
       height: 500px;
       object-fit: cover;
@@ -44,6 +44,7 @@
     .description {
       font-size: 12px;
     }
+
     .facilitites {
       font-size: 12px;
       display: flex;

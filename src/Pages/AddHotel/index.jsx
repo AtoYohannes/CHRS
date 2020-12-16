@@ -27,6 +27,8 @@ import { getFacilitys, loadfacilitys } from "../../store/facilities";
 
 import { upload } from "../../services/uploadService";
 import { toast } from "react-toastify";
+import { addHotel } from "../../store/hotels";
+import { getUser } from "../../services/authService";
 class StepperExample extends ParentForm {
   state = {
     formActivePanel4: 1,
@@ -53,6 +55,7 @@ class StepperExample extends ParentForm {
       guestMaxCapacity: "",
       isSmokingAllowed: "",
       price: "",
+      userId: getUser() && getUser()._id,
     },
     errors: {},
     selectedFile: "",
@@ -80,6 +83,7 @@ class StepperExample extends ParentForm {
     guestMaxCapacity: Joi.string(),
     isSmokingAllowed: Joi.string(),
     price: Joi.string(),
+    userId: Joi.string(),
   };
 
   swapFormActive = (a) => (param) => (e) => {
@@ -140,6 +144,12 @@ class StepperExample extends ParentForm {
     }
   };
 
+  doSubmit = () => {
+    alert();
+    console.log(this.state.data);
+    this.props.addHotel(this.state.data);
+  };
+
   render() {
     return (
       <div className="addHotelContainer">
@@ -177,7 +187,7 @@ class StepperExample extends ParentForm {
                   />
                 </MDBStepper>
               </Col>
-              <Form>
+              <Form onSubmit={this.handleSubmit}>
                 <Col md={12}>
                   {this.state.formActivePanel4 === 1 && (
                     <>
@@ -635,17 +645,9 @@ class StepperExample extends ParentForm {
                         >
                           Previous
                         </Button>
-                        <Link to={{ pathname: routes.pending }}>
-                          <Button
-                            color="success"
-                            rounded
-                            className="float-right"
-                            //TODO : Make sure you submit the Data before proceeding to the pending page
-                            // onClick={this.handleSubmission}
-                          >
-                            Submit Hotel
-                          </Button>
-                        </Link>
+                        {/* <Link to={{ pathname: routes.pending }}> */}
+                        {this.renderButton("Submit")}
+                        {/* </Link> */}
                       </FormGroup>
                     </>
                   )}
@@ -671,6 +673,7 @@ const mapDispatchToProps = (dispatch) => ({
   loadRoomTypes: () => dispatch(loadroomTypes()),
   loadRoomNames: () => dispatch(loadroomNames()),
   loadFacilities: () => dispatch(loadfacilitys()),
+  addHotel: (hotel) => dispatch(addHotel(hotel)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StepperExample);

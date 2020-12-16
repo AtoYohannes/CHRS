@@ -12,19 +12,16 @@ import {
   Input,
   Form,
 } from "reactstrap";
-import { MdLocationOn, MdPerson } from "react-icons/md";
-import ImageUploader from "react-images-upload";
+import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
 import routes from "../../Config/routes";
 import Joi from "joi-browser";
-
 import ParentForm from "../common/form";
 import { getBedTypes, loadbedTypes } from "../../store/bedTypes";
 import { getRoomTypes, loadroomTypes } from "../../store/roomTypes";
 import { getRoomNames, loadroomNames } from "../../store/roomNames";
 import { connect } from "react-redux";
 import { getFacilitys, loadfacilitys } from "../../store/facilities";
-
 import { upload } from "../../services/uploadService";
 import { toast } from "react-toastify";
 class StepperExample extends ParentForm {
@@ -45,7 +42,6 @@ class StepperExample extends ParentForm {
       language: "",
       isChildrenAllowed: "",
       isPetsAllowed: "",
-
       roomName: "",
       roomType: "",
       bedType: "",
@@ -72,7 +68,6 @@ class StepperExample extends ParentForm {
     isChildrenAllowed: Joi.string(),
     isPetsAllowed: Joi.string(),
     pictures: Joi.array(),
-
     roomName: Joi.string(),
     roomType: Joi.string(),
     bedType: Joi.string(),

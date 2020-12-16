@@ -15,37 +15,37 @@ const Something = () => {
       header: "Book your Room before you come!",
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing",
       icon: <MdHotel size={80} />,
-      color: "text-success border-0",
+      color: "text-success border-0 elements",
     },
     {
       header: "Hundreds of Customers!",
       description: "elit. Ullam nulla officiis molestiae, debitis autem",
       icon: <MdPerson size={80} />,
-      color: "text-info border-0",
+      color: "text-info border-0 elements",
     },
     {
       header: "Select the Hotel that Fits your budget!",
       description: "incidunt fuga dignissimos a dolor dolorem, expedita",
       icon: <MdAttachMoney size={80} />,
-      color: "text-warning border-0",
+      color: "text-warning border-0 elements",
     },
     {
       header: "Check Parking Availability",
       description: "quod! Nulla aspernatur unde officia hic laborum qui",
       icon: <MdLocalParking size={80} />,
-      color: "text-teal border-0",
+      color: "text-teal border-0 elements",
     },
     {
       header: "WiFi",
       description: "repellendus?",
       icon: <MdWifi size={80} />,
-      color: "text-cyan border-0",
+      color: "text-cyan border-0 elements",
     },
     {
       header: "Need A Car Rental?",
       description: "repellendus?",
       icon: <MdDirectionsCar size={80} />,
-      color: "text-secondary border-0",
+      color: "text-secondary border-0 elements",
     },
   ];
   return (

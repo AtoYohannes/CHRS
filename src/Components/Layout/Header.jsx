@@ -151,13 +151,15 @@ class Header extends React.Component {
                   />
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to={{ pathname: routes.addHotels }}>
-                    <Button className="border">Add Your Hotel</Button>
-                  </Link>
-                </NavLink>
-              </NavItem>
+              {getUser() && (
+                <NavItem>
+                  <NavLink>
+                    <Link to={{ pathname: routes.addHotels }}>
+                      <Button className="border">Add Your Hotel</Button>
+                    </Link>
+                  </NavLink>
+                </NavItem>
+              )}
               {!getUser() && (
                 <>
                   <NavItem>

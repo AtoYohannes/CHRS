@@ -15,10 +15,17 @@ import {
 import { MdLocationOn, MdPerson } from "react-icons/md";
 import ImageUploader from "react-images-upload";
 
-class StepperExample extends React.Component {
+import ParentForm from "../common/form";
+
+class StepperExample extends ParentForm {
   state = {
     formActivePanel4: 1,
     formActivePanel1Changed: false,
+    data: {
+      hotelName: "",
+      star: "",
+    },
+    errors: {},
   };
 
   swapFormActive = (a) => (param) => (e) => {

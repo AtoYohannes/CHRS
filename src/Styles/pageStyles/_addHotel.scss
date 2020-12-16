@@ -27,3 +27,11 @@
     }
   }
 }
+
+.imagePreview {
+  img {
+    height: 110px;
+    object-fit: cover;
+    border-radius: 0px;
+  }
+}

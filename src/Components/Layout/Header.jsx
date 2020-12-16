@@ -29,7 +29,7 @@ import {
 import { Link } from "react-router-dom";
 import Avatar from "../Avatar";
 import UserCard from "../Card/UserCard";
-
+import Logo from "../../Assets/Icon/CHRS.png";
 import { getUser } from "../../services/authService";
 
 const bem = bn.create("header");
@@ -77,17 +77,19 @@ class Header extends React.Component {
 
     return (
       <>
-        <Navbar light expand className="bg-primary text-light">
+        <Navbar light expand className="bg-gradient-theme-right text-light">
           <Link
             to={{ pathname: routes.homePage }}
             style={{ textDecoration: "none" }}
           >
-            <Nav navbar>LOGO </Nav>
+            <Nav className="ml-5" navbar>
+              <img src={Logo} width="60" height="50" className="pr-2" alt="" />
+            </Nav>
           </Link>
 
           {isMobile && (
-            <Nav navbar className="ml-2">
-              CHRS
+            <Nav navbar className="ml-2 text-primary">
+              <b>CHRS</b>
             </Nav>
           )}
           {isMobile ? (

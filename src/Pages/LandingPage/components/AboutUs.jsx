@@ -37,7 +37,8 @@ const Something = () => {
     },
     {
       header: "WiFi",
-      description: "repellendus?",
+      description:
+        "Whether you’re working away from home or on a trip, staying connected is crucial, as we all know. You’ve got your data plan but it’s not always enough. We got hotels that promises Smooth Connections",
       icon: <MdWifi size={80} />,
       color: "text-cyan border-0 elements",
     },
@@ -82,13 +83,7 @@ const Something = () => {
                       <CardTitle className={benefit.color}>
                         <b>{benefit.header}</b>
                       </CardTitle>
-                      <CardText>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Ullam nulla officiis molestiae, debitis autem
-                        incidunt fuga dignissimos a dolor dolorem, expedita
-                        quod! Nulla aspernatur unde officia hic laborum qui
-                        repellendus?
-                      </CardText>
+                      <CardText>{benefit.description}</CardText>
                     </Col>
                   </Row>
                 </Card>

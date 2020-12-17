@@ -11,9 +11,7 @@ import {
   Label,
   Form,
 } from "reactstrap";
-import { MdLocationOn } from "react-icons/md";
-import { Link } from "react-router-dom";
-import routes from "../../Config/routes";
+import { MdArrowBack, MdLocationOn } from "react-icons/md";
 import Joi from "joi-browser";
 import ParentForm from "../common/form";
 import { getBedTypes, loadbedTypes } from "../../store/bedTypes";
@@ -631,16 +629,17 @@ class StepperExample extends ParentForm {
                       </Card>
                       <hr />
                       <FormGroup>
-                        <Button
-                          outline
-                          className="float-left"
-                          onClick={this.handleNextPrevClick(4)(4)}
-                        >
-                          Previous
-                        </Button>
                         {/* <Link to={{ pathname: routes.pending }}> */}
                         {this.renderButton("Submit")}
                         {/* </Link> */}
+                        <Button
+                          outline
+                          block
+                          size="sm"
+                          onClick={this.handleNextPrevClick(4)(4)}
+                        >
+                          <MdArrowBack className="m-2" /> Previous
+                        </Button>
                       </FormGroup>
                     </>
                   )}

@@ -32,7 +32,6 @@ import UserCard from "../Card/UserCard";
 
 import { getUser, logout } from "../../services/authService";
 import Logo from "../../Assets/Icon/CHRS.png";
-import { getUser } from "../../services/authService";
 
 const bem = bn.create("header");
 

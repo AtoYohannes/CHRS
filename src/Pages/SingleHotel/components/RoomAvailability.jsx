@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Table } from "reactstrap";
 import routes from "../../../Config/routes";
 
-const RoomAvailability = () => {
+const RoomAvailability = ({ hotel }) => {
   return (
     <div className="roomAvailability">
       <h6>
@@ -20,7 +20,45 @@ const RoomAvailability = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {hotel.rooms &&
+            hotel.rooms.map((room) => (
+              <tr>
+                <td>
+                  <b>{room.roomName.name}</b>
+                  <div>
+                    {/* <div className="feature">
+                      <MdDoneAll color="green" /> one bed
+                    </div>
+                    <div className="feature">
+                      <MdDoneAll color="green" /> two bed
+                    </div>
+                    <div className="feature">
+                      <MdDoneAll color="green" /> three bed
+                    </div>{" "} */}
+                  </div>
+                </td>
+                <td>
+                  {room.guestMaxCapacity} <MdPerson />
+                </td>
+
+                <td>{room.price}</td>
+                <td>
+                  <Link
+                    to={{
+                      pathname: routes.booking,
+                      state: { hotel: hotel, room: room },
+                    }}
+                  >
+                    <Button>
+                      {" "}
+                      <MdAdd />
+                      Reserve
+                    </Button>
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          {/* <tr>
             <td>
               <b>Budget Single Room</b>
               <div>
@@ -110,7 +148,7 @@ const RoomAvailability = () => {
                 </Button>
               </Link>
             </td>
-          </tr>
+          </tr> */}
         </tbody>
       </Table>
     </div>

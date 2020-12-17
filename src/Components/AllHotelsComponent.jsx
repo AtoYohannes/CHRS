@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import routes from "../Config/routes";
 import RatingComponent from "./RatingComponent";
 
-const AllHotelsComponent = () => {
+const AllHotelsComponent = ({ hotel }) => {
   return (
     <div>
       <Card className="border-0 ">
@@ -23,17 +23,17 @@ const AllHotelsComponent = () => {
           <Card row className="AllItemsHotelContainer shadows zoom">
             <Row>
               <Col md={4} sm={12} xs={12}>
-                <CardImg src={Intercontinental} />
+                <CardImg src={hotel.pictures[0]} />
               </Col>
               <Col md={5} sm={12} xs={12}>
                 <CardHeader>
                   <div>
-                    <h8>Skylight International Hotel</h8>
+                    <h8>{hotel.name}</h8>
                     <RatingComponent />
                   </div>
                 </CardHeader>
                 <CardBody>
-                  <MdPinDrop /> <small>Bole Addis Ababa Ethiopia</small>
+                  <MdPinDrop /> <small>{hotel.city}</small>
                 </CardBody>
               </Col>
               <Col align="right" className="pr-5" md={3} sm={12} xs={12}>
@@ -52,7 +52,12 @@ const AllHotelsComponent = () => {
                 </CardTitle>
 
                 <CardTitle>
-                  <Link to={{ pathname: routes.singleHotel }}>
+                  <Link
+                    to={{
+                      pathname: `/single-hotel/${hotel._id}`,
+                      state: { hotel: hotel },
+                    }}
+                  >
                     <Button>
                       Choose Room <MdArrowForward />
                     </Button>

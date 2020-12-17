@@ -1,6 +1,7 @@
 import React from "react";
 import { MdDone, MdDoneAll, MdLocationOn, MdPerson } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { Link, withRouter } from "react-router-dom";
 import {
   Card,
   Progress,
@@ -17,8 +18,38 @@ import {
 import { Intercontinental } from "../../Assets/HotelImages/HotelView";
 import RatingComponent from "../../Components/RatingComponent";
 import routes from "../../Config/routes";
+import { toast } from "react-toastify";
 
-const Booking = () => {
+import { getUser } from "../../services/authService";
+import { addReservation, getData, getStatus } from "../../store/reservations";
+
+const Booking = (props) => {
+  const { hotel, room } = props.location.state;
+  const dispatch = useDispatch();
+  const data = useSelector(getData);
+  const status = useSelector(getStatus);
+  console.log("====================================");
+  console.log(data);
+  console.log("====================================");
+  const confirmationNumber = Math.random().toString(36).substring(7);
+
+  const handleConfirm = async () => {
+    const formData = {
+      hotelId: hotel._id,
+      roomId: room._id,
+      userId: getUser()._id,
+      confirmationNumber,
+      ...data,
+    };
+    dispatch(addReservation(formData));
+  };
+  if (status === "success") {
+    props.history.push({
+      pathname: routes.bookingConfirmation,
+      state: { confirmationNumber },
+    });
+  }
+
   return (
     <div className="bookingContainers">
       <div className="progresses">
@@ -32,7 +63,7 @@ const Booking = () => {
           </Col>
           <Col md={3} align="center">
             <MdDone color="green" size={30} />
-            <div>Enter Your Detail</div>
+            <div>Confirm Booking</div>
           </Col>
         </Row>
       </div>
@@ -40,23 +71,23 @@ const Booking = () => {
       <Card className="p-3 detailInfo">
         <Row>
           <Col md={6}>
-            <CardImg src={Intercontinental} />
+            <CardImg src={hotel.pictures[0]} />
           </Col>
           <Col md={6} className="p-3">
             <CardTitle>
-              <h6>Skylight International Hotel</h6>
+              <h6>{hotel.name}</h6>
             </CardTitle>
             <div className="ratings">
               <RatingComponent size={30} />
             </div>
 
             <CardTitle>
-              <MdLocationOn /> Bole, Addis Ababa : Ethiopia
+              <MdLocationOn /> {hotel.city}
             </CardTitle>
           </Col>
         </Row>
         <hr />
-        <small>Please Sign in</small>
+        {/* <small>Please Sign in</small>
         <Card className="signIn">
           <Row>
             <Col md={2}>
@@ -73,45 +104,43 @@ const Booking = () => {
               </CardBody>
             </Col>
           </Row>
-        </Card>
+        </Card> */}
         <hr />
-        <small>Enter Your Details</small>
+        <small>Check Your Details</small>
         <Card className="border-0 p-3">
           <Row>
             <Col md={6}>
               <FormGroup>
                 <Label>First Name*</Label>
-                <Input placeholder="First Name" />
+                <Input placeholder={getUser().firstName} />
               </FormGroup>
             </Col>
             <Col md={6}>
               <FormGroup>
                 <Label>Last Name*</Label>
-                <Input placeholder="Last Name" />
+                <Input placeholder={getUser().lastName} />
               </FormGroup>
             </Col>
             <Col md={12}>
               <FormGroup>
                 <Label>Email Address*</Label>
-                <Input type="email" placeholder="Email Address" />
+                <Input type="email" placeholder={getUser().email} />
               </FormGroup>
             </Col>
-            <Col md={12}>
+            {/* <Col md={12}>
               <FormGroup>
                 <Label>Confirm Email Address*</Label>
                 <Input type="email" placeholder="Confirm Email Address" />
               </FormGroup>
-            </Col>
+            </Col> */}
             <Col md={12}>
               <FormGroup>
                 <Label>Phone Number*</Label>
-                <Input type="number" placeholder="Phone Number" />
+                <Input type="number" placeholder={getUser().phone} />
               </FormGroup>
             </Col>
             <Col md={12} align="center">
-              <Link to={{ pathname: routes.bookingConfirmation }}>
-                <Button>Confirm Your Booking</Button>
-              </Link>
+              <Button onClick={handleConfirm}>Confirm Your Booking</Button>
             </Col>
           </Row>
         </Card>
@@ -119,4 +148,5 @@ const Booking = () => {
     </div>
   );
 };
-export default Booking;
+
+export default withRouter(Booking);

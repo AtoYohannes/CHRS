@@ -1,13 +1,34 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Input, Row, Button, Col } from "reactstrap";
+import { Link, Redirect, withRouter } from "react-router-dom";
+import { Input, Row, Button, Col, Form } from "reactstrap";
 import routes from "../../../Config/routes";
+import Joi from "joi-browser";
 
-class Explore extends Component {
+import ParentForm from "../../common/form";
+import { addData } from "../../../store/reservations";
+import { connect } from "react-redux";
+class Explore extends ParentForm {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {
+        location: "",
+        checkInDate: "",
+        checkOutDate: "",
+      },
+      errors: {},
+    };
+    this.schema = {
+      location: Joi.string(),
+      checkInDate: Joi.date(),
+      checkOutDate: Joi.date(),
+    };
   }
+  doSubmit = () => {
+    this.props.addData(this.state.data);
+
+    this.props.history.push(routes.allHotels);
+  };
   render() {
     return (
       <div className="bookingContainer">
@@ -19,40 +40,37 @@ class Explore extends Component {
         </div>
         <hr />
         <Col align="center">
-          <Row className="bookingInputContainer">
-            <div className="locationInput">
-              <Input placeholder="Where are you going?" />
-            </div>
-            <div>
-              <Input type="date" />
-            </div>
-            <div>
-              <Input type="date" />
-            </div>
+          <Form onSubmit={this.handleSubmit}>
+            <Row className="bookingInputContainer">
+              <div className="locationInput">
+                {this.renderInput2("location", "Where are you going?")}
+              </div>
+              <div>{this.renderInput2("checkInDate", "", "date")}</div>
+              <div>{this.renderInput2("checkOutDate", "", "date")}</div>
 
-            <div>
-              <Input type="select">
-                <option>Room Type 0</option>
-                <option>Room Type 1</option>
-                <option>Room Type 2</option>
-                <option>Room Type 3</option>
-                <option>Room Type 4</option>
-                <option>Room Type 5</option>
-                <option>Room Type 6</option>
-                <option>Room Type 7</option>
-                <option>Room Type 8</option>
-              </Input>
-            </div>
-            <div>
-              <Link to={{ pathname: routes.allHotels }}>
-                <Button color="primary">Search</Button>
-              </Link>
-            </div>
-          </Row>
+              {/* <div>
+                <Input type="select">
+                  <option>Room Type 0</option>
+                  <option>Room Type 1</option>
+                  <option>Room Type 2</option>
+                  <option>Room Type 3</option>
+                  <option>Room Type 4</option>
+                  <option>Room Type 5</option>
+                  <option>Room Type 6</option>
+                  <option>Room Type 7</option>
+                  <option>Room Type 8</option>
+                </Input>
+              </div> */}
+              <div>{this.renderButton2("Search")}</div>
+            </Row>
+          </Form>
         </Col>
       </div>
     );
   }
 }
 
-export default Explore;
+const mapDispatchToProps = (dispatch) => ({
+  addData: (data) => dispatch(addData(data)),
+});
+export default connect(null, mapDispatchToProps)(withRouter(Explore));

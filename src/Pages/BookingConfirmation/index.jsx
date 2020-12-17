@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MdArrowBack, MdDoneAll, MdPrint, MdStar } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -11,8 +12,13 @@ import {
   Row,
 } from "reactstrap";
 import routes from "../../Config/routes";
+import { getUser } from "../../services/authService";
+import { getCurrentReservation } from "../../store/reservations";
 
-const BookingConfirmation = () => {
+const BookingConfirmation = (props) => {
+  const reservation = useSelector(getCurrentReservation);
+  const { hotel, room } = reservation;
+
   return (
     <div className="bookingConfirmation">
       <Card className="p-5">
@@ -26,10 +32,10 @@ const BookingConfirmation = () => {
         </CardHeader>
         <Card className="border">
           <CardHeader>
-            Thank you <b>John Doe</b>
+            Thank you <b>{getUser().firstName + " " + getUser().lastName}</b>
             <div>
               <small>
-                <b>Your Booking in Skylight is Confirmed</b>
+                <b>Your Booking in {hotel && hotel.name} is Confirmed</b>
               </small>
             </div>
           </CardHeader>
@@ -61,7 +67,7 @@ const BookingConfirmation = () => {
         <h8>Check your Details</h8>
         <Card className="border">
           <CardHeader>
-            Ethiopian Skylight Hotel
+            {hotel && hotel.name}
             <MdStar />
             <MdStar />
             <MdStar />
@@ -73,12 +79,12 @@ const BookingConfirmation = () => {
                 <div>
                   <b> Confirmation Number</b>
                 </div>
-                <div>
+                {/* <div>
                   <b> PIN Code</b>
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                   <b> Booking Details</b>
-                </div>
+                </div> */}
                 <div>
                   <b> Check-in</b>
                 </div>
@@ -87,11 +93,11 @@ const BookingConfirmation = () => {
                 </div>
               </Col>
               <Col md={6}>
-                <div>27263726318236</div>
-                <div className="text-success">9905</div>
-                <div>1 night, 1 room</div>
-                <div>Friday, 20 December 2019(12:00-12:00)</div>
-                <div>Saturday, 21 December 2019(until 10:00)</div>
+                <div>{reservation.confirmationNumber}</div>
+                {/* <div className="text-success">9905</div> */}
+                {/* <div>1 night, 1 room</div> */}
+                <div>{reservation.checkInDate}</div>
+                <div>{reservation.checkOutDate}</div>
               </Col>
             </Row>
             <Card className="border p-2 propertyDisplay">
@@ -102,9 +108,9 @@ const BookingConfirmation = () => {
                 </div>
               </div>
               <div>
-                <h8>450 ETB</h8>
+                <h8>Price</h8>
                 <div>
-                  <small className="ml-3">67.56 ETB</small>
+                  <small className="ml-3">{room && room.price} ETB</small>
                 </div>
               </div>
               <div>
@@ -112,7 +118,9 @@ const BookingConfirmation = () => {
                   <b>Total</b>
                 </h8>
                 <div>
-                  <small className="ml-3 text-success">517.65 ETB</small>
+                  <small className="ml-3 text-success">
+                    {reservation.price} ETB
+                  </small>
                 </div>
               </div>
             </Card>
@@ -121,7 +129,7 @@ const BookingConfirmation = () => {
         <h8>Property Details</h8>
         <Card className="border">
           <CardHeader>
-            Ethiopian Skylight Hotel
+            {hotel && hotel.name}
             <MdStar />
             <MdStar />
             <MdStar />
@@ -147,16 +155,13 @@ const BookingConfirmation = () => {
                 </div>
               </Col>
               <Col md={6}>
-                <div>Somewhere close to bole</div>
-                <div> +251 921 25 8848 </div>
+                <div>{hotel && hotel.city}</div>
+                <div> {hotel && hotel.manager.phone} </div>
                 <div className="text-success">
                   <MdDoneAll />
                 </div>
-                <div>Fasil Leykunbirhan</div>
-                <div>
-                  Children of any age are welcome, No costs or extra beds are
-                  available
-                </div>
+                <div>{getUser().firstName + " " + getUser().lastName}</div>
+                <div>Children of any age are welcome,</div>
               </Col>
             </Row>
           </CardBody>

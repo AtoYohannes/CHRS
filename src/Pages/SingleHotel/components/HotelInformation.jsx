@@ -12,7 +12,7 @@ import {
   TEA_COFFEE,
 } from "../../../Components/Facilities";
 
-const HotelInformation = () => {
+const HotelInformation = ({ hotel }) => {
   return (
     <div className="hotelInformation">
       <div className="description">
@@ -43,20 +43,20 @@ const HotelInformation = () => {
       </h6>
       <div className="facilitites">
         <Row>
-          <FreeBreakfast />
-          <FreeParking />
-          <Bar />
+          {hotel.isBreakFastAvailable === "Yes" && <FreeBreakfast />}
+          {hotel.isParkingAvailable === "Yes" && <FreeParking />}
+          {/* <Bar />
           <Restaurant />
           <NoSmokingRooms />
           <TEA_COFFEE />
-          <ATM />
+          <ATM /> */}
         </Row>
       </div>
-      <h6>
+      {/* <h6>
         <b>Things you should know</b>
-      </h6>
-      <NO_BOOKING />
-      <SOMETHING />
+      </h6> */}
+      {/* <NO_BOOKING />
+      <SOMETHING /> */}
     </div>
   );
 };

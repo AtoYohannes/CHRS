@@ -13,7 +13,7 @@ import {
   Skylight2,
 } from "../../../Assets/HotelImages/HotelView";
 
-const HotelImagesContainer = () => {
+const HotelImagesContainer = (props) => {
   const hotel = [
     {
       hotelName: "Eleli International Hotel",
@@ -158,11 +158,12 @@ const HotelImagesContainer = () => {
         showArrows={true}
         showThumbs={true}
       >
-        {hotel.map((hotels) => (
-          <div className="singleHotelImages">
-            <img alt="" src={hotels.image} />
-          </div>
-        ))}
+        {props.hotel.pictures &&
+          props.hotel.pictures.map((picture) => (
+            <div className="singleHotelImages">
+              <img alt="" src={picture} />
+            </div>
+          ))}
       </Carousel>
     </div>
   );

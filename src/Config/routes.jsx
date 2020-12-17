@@ -2,7 +2,7 @@ export default {
   homePage: "/",
   signIn: "/sign-in",
   signUp: "/sign-up",
-  singleHotel: "/single-hotel",
+  singleHotel: "/single-hotel/:id",
   booking: "/booking",
   bookingConfirmation: "/booking-confirmation",
   rating: "/rating",

@@ -13,6 +13,7 @@ export function getToken() {
 
 export function logout() {
   store.remove(tokenKey);
+  store.remove(userKey);
 }
 
 export function setUser(user) {

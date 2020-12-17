@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 import Avatar from "../Avatar";
 import UserCard from "../Card/UserCard";
 
-import { getUser } from "../../services/authService";
+import { getUser, logout } from "../../services/authService";
 
 const bem = bn.create("header");
 
@@ -70,6 +70,10 @@ class Header extends React.Component {
       isOpenUserCardPopover: !this.state.isOpenUserCardPopover,
       isOpenSearchCardPopover: false,
     });
+  };
+
+  logout = () => {
+    logout();
   };
 
   render() {

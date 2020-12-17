@@ -79,6 +79,15 @@ class Form extends Toast {
       )
     );
   }
+  renderButton2(label, loader = false) {
+    return (
+      !this.props.disabled && (
+        <Button color="primary" disabled={this.validate || this.props.loading}>
+          {this.props.loading || loader ? <LoadingSpinner /> : label}
+        </Button>
+      )
+    );
+  }
 
   renderSelect(name, label, options, optionsFrom = "client") {
     var props = {};
@@ -164,6 +173,19 @@ class Form extends Toast {
         }
         error={_.get(errors, props.name)}
         invalid={_.get(errors, props.name) ? true : false}
+      />
+    );
+  }
+
+  renderInput2(name, placeholder = "", type = "text") {
+    const { data } = this.state;
+    return (
+      <ReactstrapInput
+        type={type}
+        name={name}
+        value={_.get(data, name)}
+        onChange={this.handleChange}
+        placeholder={placeholder}
       />
     );
   }

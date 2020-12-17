@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   HotelImagesContainer,
   Header,
@@ -7,14 +7,24 @@ import {
   HouseRules,
 } from "./components";
 
-const Index = () => {
+const Index = (props) => {
+  const [hotel, setHotel] = useState({});
+  useEffect(() => {
+    if (props.location.state) {
+      let { hotel } = props.location.state;
+      setHotel(hotel);
+      console.log("====================================");
+      console.log(hotel);
+      console.log("====================================");
+    }
+  }, [props.location.state]);
   return (
     <div className="singleHotel bg-light">
-      <Header />
-      <HotelImagesContainer />
-      <HotelInformation />
-      <RoomAvailability />
-      <HouseRules />
+      <Header hotel={hotel} />
+      <HotelImagesContainer hotel={hotel} />
+      <HotelInformation hotel={hotel} />
+      <RoomAvailability hotel={hotel} />
+      <HouseRules hotel={hotel} />
     </div>
   );
 };

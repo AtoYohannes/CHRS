@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   CardHeader,
   Pagination,
@@ -10,16 +11,22 @@ import {
 } from "reactstrap";
 
 import { AllHotelsComponent } from "../../../Components";
+import { getHotels, loadHotels } from "../../../store/hotels";
 
 const HotelComponent = () => {
+  const dispatch = useDispatch();
+  const hotels = useSelector(getHotels);
+  useEffect(() => {
+    dispatch(loadHotels());
+  }, []);
   return (
     <div>
       <Card>
         <CardHeader>Hotels in Our Database</CardHeader>
         <CardBody>
-          <AllHotelsComponent />
-          <AllHotelsComponent />
-          <AllHotelsComponent />
+          {hotels.map((hotel) => (
+            <AllHotelsComponent hotel={hotel} />
+          ))}
         </CardBody>
       </Card>
 
@@ -111,4 +118,5 @@ const HotelComponent = () => {
     </div>
   );
 };
+
 export default HotelComponent;

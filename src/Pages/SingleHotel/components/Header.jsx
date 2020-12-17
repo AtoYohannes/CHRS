@@ -39,6 +39,7 @@ class Header extends React.Component {
     if (this.state.drawerOpen) {
       backdrop = <BackDrop close={this.backdropClickHandler} />;
     }
+    const { hotel } = this.props;
 
     return (
       <Card className="singleHotelHeader">
@@ -50,7 +51,7 @@ class Header extends React.Component {
             <Row className="mb-1">
               <Col md={12} sm={12} xs={12}>
                 <Row>
-                  <h4>Skylight International Hotel</h4>
+                  <h4>{hotel.name}</h4>
                   <b className="p-2">8.3</b>
                 </Row>
               </Col>

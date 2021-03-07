@@ -8,21 +8,30 @@ import {
   PopoverBody,
   ListGroup,
   ListGroupItem,
+  Button,
+  UncontrolledPopover,
 } from "reactstrap";
 import bn from "../../utils/bemnames";
 import routes from "../../Config/routes";
-import { RenderButton } from "../MainRender";
 import {
-  MdReorder,
-  MdHelp,
   MdExitToApp,
-  MdGroupAdd,
-  MdPerson,
+  MdHelp,
+  MdInsertChart,
+  MdPersonPin,
+  MdSettingsApplications,
   MdPanoramaFishEye,
   MdQuestionAnswer,
   MdPageview,
+  MdPerson,
+  MdReorder,
+  MdGroupAdd,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Avatar from "../Avatar";
+import UserCard from "../Card/UserCard";
+
+import { getUser, logout } from "../../services/authService";
+import Logo from "../../Assets/Icon/CHRS.png";
 
 const bem = bn.create("header");
 
@@ -33,6 +42,7 @@ class Header extends React.Component {
       isMobile: false,
       isMobilePopoverOpen: false,
       isAboutPopoverOpen: false,
+      isOpenUserCardPopover: false,
     };
     this.updatePredicate = this.updatePredicate.bind(this);
   }
@@ -56,27 +66,35 @@ class Header extends React.Component {
       isAboutPopoverOpen: !this.state.isAboutPopoverOpen,
     });
   };
+  toggleUserCardPopover = () => {
+    this.setState({
+      isOpenUserCardPopover: !this.state.isOpenUserCardPopover,
+      isOpenSearchCardPopover: false,
+    });
+  };
+
+  logout = () => {
+    logout();
+  };
 
   render() {
     const isMobile = this.state.isMobile;
-    let drawerClasses = "";
-    if (this.props.scrolled) {
-      drawerClasses = "bg-gradient-theme-right scrolledAppBar";
-    }
 
     return (
       <>
-        <Navbar light fixed="top" expand className={drawerClasses}>
+        <Navbar light expand className="bg-gradient-theme-right text-light">
           <Link
             to={{ pathname: routes.homePage }}
             style={{ textDecoration: "none" }}
           >
-            <Nav navbar>LOGO </Nav>
+            <Nav className="ml-5" navbar>
+              <img src={Logo} width="60" height="50" className="pr-2" alt="" />
+            </Nav>
           </Link>
 
           {isMobile && (
-            <Nav navbar className="ml-2">
-              Project Title
+            <Nav navbar className="ml-2 text-primary">
+              <b>CHRS</b>
             </Nav>
           )}
           {isMobile ? (
@@ -90,7 +108,7 @@ class Header extends React.Component {
                   target="AboutPopover"
                   className="p-5 border"
                 >
-                  <PopoverBody className="p-2 border-light">
+                  <PopoverBody className="p-2 border-light ">
                     <ListGroup flush>
                       <ListGroupItem
                         tag="button"
@@ -104,7 +122,7 @@ class Header extends React.Component {
                         action
                         className="border-light"
                       >
-                        <MdHelp className="mr-3" /> How Magazine Works
+                        <MdHelp className="mr-3" /> How CHRS Works
                       </ListGroupItem>
 
                       <ListGroupItem
@@ -112,7 +130,7 @@ class Header extends React.Component {
                         action
                         className="border-light"
                       >
-                        <MdPanoramaFishEye className="mr-3" /> Browse Magazine
+                        <MdPanoramaFishEye className="mr-3" /> Browse CHRS
                       </ListGroupItem>
                       <ListGroupItem
                         tag="button"
@@ -131,29 +149,130 @@ class Header extends React.Component {
                     </ListGroup>
                   </PopoverBody>
                 </Popover>
+
                 <NavLink onMouseEnter={this.toggleAboutPopover}>
-                  <RenderButton
-                    title="About"
-                    outline
-                    color="dark"
+                  <MdHelp
+                    className="text-light mt-1"
+                    size={25}
                     id="AboutPopover"
                   />
                 </NavLink>
               </NavItem>
+              {getUser() && (
+                <NavItem>
+                  <NavLink>
+                    <Link to={{ pathname: routes.addHotels }}>
+                      <Button className="border">Add Your Hotel</Button>
+                    </Link>
+                  </NavLink>
+                </NavItem>
+              )}
+              {!getUser() && (
+                <>
+                  <NavItem>
+                    <NavLink>
+                      <Link to={{ pathname: routes.signUp }}>
+                        <Button color="light">SignUp</Button>
+                      </Link>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink>
+                      <Link to={{ pathname: routes.signIn }}>
+                        <Button color="light">SignIn</Button>
+                      </Link>
+                    </NavLink>
+                  </NavItem>
+                </>
+              )}
               <NavItem>
-                <NavLink>
-                  <RenderButton
-                    title="SignUp"
-                    onClick={() => this.props.toggle("signUp")}
-                  />
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <RenderButton
-                    onClick={() => this.props.toggle("signIn")}
-                    title="SignIn"
-                  />
+                <NavLink id="Popover2">
+                  <>
+                    <div onClick={this.toggleUserCardPopover}>
+                      <Avatar
+                        size={28}
+                        src={
+                          this.props.currentUser &&
+                          this.props.currentUser.avatar
+                        }
+                      />
+                      <UncontrolledPopover
+                        trigger="focus"
+                        placement="bottom-start"
+                        isOpen={this.state.isOpenUserCardPopover}
+                        toggle={this.toggleUserCardPopover}
+                        target="Popover2"
+                        className="p-0 border-0 "
+                        style={{ minWidth: 250 }}
+                      >
+                        <PopoverBody className="p-0 border-light userPopover">
+                          <UserCard
+                            title={
+                              this.props.currentUser
+                                ? this.props.currentUser.name
+                                : "User Name"
+                            }
+                            subtitle={
+                              this.props.currentUser
+                                ? this.props.currentUser.email
+                                : "User Email"
+                            }
+                            text={
+                              this.props.currentUser
+                                ? this.props.currentUser.location
+                                : "User Location"
+                            }
+                            className="border-light"
+                          >
+                            <ListGroup flush>
+                              <Link to={{ pathname: routes.profile }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdPersonPin /> Profile
+                                </ListGroupItem>
+                              </Link>
+                              <Link to={{ pathname: routes.buyAndSell }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdInsertChart /> Activities
+                                </ListGroupItem>
+                              </Link>
+                              <Link to={{ pathname: routes.settings }}>
+                                <ListGroupItem
+                                  tag="button"
+                                  action
+                                  className="border-light"
+                                >
+                                  <MdSettingsApplications /> Settings
+                                </ListGroupItem>
+                              </Link>
+                              <ListGroupItem
+                                tag="button"
+                                action
+                                className="border-light"
+                              >
+                                <MdHelp /> Help
+                              </ListGroupItem>
+                              <ListGroupItem
+                                onClick={this.logout}
+                                tag="button"
+                                action
+                                className="border-light"
+                              >
+                                <MdExitToApp /> Signout
+                              </ListGroupItem>
+                            </ListGroup>
+                          </UserCard>
+                        </PopoverBody>
+                      </UncontrolledPopover>
+                    </div>
+                  </>
                 </NavLink>
               </NavItem>
             </Nav>
@@ -169,21 +288,15 @@ class Header extends React.Component {
               >
                 <PopoverBody className="p-1">
                   <ListGroup flush>
-                    <ListGroupItem
-                      tag="button"
-                      action
-                      className="border-light"
-                      onClick={() => this.props.toggle("signIn")}
-                    >
-                      <MdExitToApp className="mr-2" /> {"  "} SignIn
+                    <ListGroupItem tag="button" action className="border-light">
+                      <Link to={{ pathname: routes.signIn }}>
+                        <MdExitToApp className="mr-2" /> {"  "} SignIn
+                      </Link>
                     </ListGroupItem>
-                    <ListGroupItem
-                      tag="button"
-                      action
-                      className="border-light"
-                      onClick={() => this.props.toggle("signUp")}
-                    >
-                      <MdGroupAdd className="mr-2" /> SignUp
+                    <ListGroupItem tag="button" action className="border-light">
+                      <Link to={{ pathname: routes.signUp }}>
+                        <MdGroupAdd className="mr-2" /> SignUp
+                      </Link>
                     </ListGroupItem>
                     <ListGroupItem tag="button" action className="border-light">
                       <MdHelp className="mr-2" /> About Us

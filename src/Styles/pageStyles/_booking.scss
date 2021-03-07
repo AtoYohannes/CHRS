@@ -1,0 +1,78 @@
+.bookingContainers {
+  margin: 0 auto;
+  width: 90%;
+
+  .progresses {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .detailInfo {
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .ratings {
+      color: gold;
+    }
+    small {
+      margin-bottom: 10px;
+    }
+    .signIn {
+      background-color: #eeffef;
+    }
+    label {
+      font-size: 11px;
+    }
+    input {
+      font-size: 9px;
+    }
+  }
+}
+
+.bookingConfirmation {
+  margin: 0 auto;
+  width: 90%;
+  .labelss {
+    color: green;
+    font-weight: bold;
+    div {
+      margin-bottom: 5px;
+    }
+  }
+  h8 {
+    margin: 15px;
+    font-weight: bolder;
+  }
+  button {
+    font-size: 9px;
+  }
+  .invoicing {
+    div {
+      margin-bottom: 10px;
+    }
+    .propertyDisplay {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+}
+
+.recentBookingsContainer {
+  margin: 0 auto;
+  width: 90%;
+  .recentBookingsContainerHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bookingCard {
+    box-shadow: 1px 0px 5px rgba(153, 153, 153, 0.5);
+    .info {
+      padding-bottom: 10px;
+    }
+  }
+  .recentBookingFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+}

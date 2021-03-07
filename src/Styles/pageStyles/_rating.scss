@@ -1,0 +1,70 @@
+.ratingsContainer {
+  margin: 0 auto;
+  width: 95%;
+
+  button:hover {
+    transform: scale(1.2);
+  }
+
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .divi {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .iconsRating {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 10px;
+  }
+  .spacingg {
+    margin-bottom: 15px;
+    .iconAngry {
+      color: lightslategray;
+    }
+    .iconAngry:hover {
+      color: $danger;
+    }
+  }
+  .iconOkay {
+    color: lightslategray;
+  }
+  .iconOkay:hover {
+    color: $warning;
+  }
+  .icon {
+    color: lightslategray;
+  }
+  .icon:hover {
+    color: $success;
+  }
+  textarea {
+    height: 150px;
+    font-size: 11px;
+  }
+}
+
+//========= ALL RATINGS AND REVIEWS =========
+.ratingAndReviewsContainer {
+  margin: 0 auto;
+  width: 90%;
+  box-shadow: 1px 0px 7px rgba(77, 77, 77, 0.5);
+  padding: 30px;
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .allRatings {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ratingsCard {
+    box-shadow: 1px 0px 7px rgba(77, 77, 77, 0.5);
+  }
+}

@@ -64,7 +64,7 @@ class MainLayout extends React.Component {
           {backdrop}
           <Content fluid>
             <Header toggle={this.drawerToggleClickHandler} scrolled={this.state.scrolled} />
-            <div className="cr-app-body">{children}</div>
+            <div >{children}</div>
             <div className="mt-5">
               <Footer />
             </div>

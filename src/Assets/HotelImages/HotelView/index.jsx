@@ -1,0 +1,10 @@
+export { default as Eleli } from "./Eleli.jpg";
+export { default as Eleli2 } from "./Eleli2.jpg";
+export { default as Intercontinental } from "./Intercontinental.jpg";
+export { default as Intercontinental2 } from "./Intercontinental2.jpg";
+export { default as Jupiter } from "./Jupiter.jpg";
+export { default as Jupiter2 } from "./Jupiter2.jpg";
+export { default as Sheraton } from "./Sheraton.jpg";
+export { default as Sheraton2 } from "./Sheraton2.jpg";
+export { default as Skylight } from "./Skylight.jpg";
+export { default as Skylight2 } from "./Skylight2.jpg";

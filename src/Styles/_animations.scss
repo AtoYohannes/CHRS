@@ -1,5 +1,3 @@
-// source: https://github.com/daneden/animate.css
-
 @keyframes swing {
   20% {
     transform: rotate3d(0, 0, 1, 15deg);
@@ -34,17 +32,15 @@
 
 .zoom {
   img {
-  transition: 1s
+    transition: 2s;
   }
-  transition: 2s
+  transition: 0.5s;
 }
 
 .zoom:hover {
   img {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
+  transform: scale(1.001);
+  box-shadow: 12px 12px 10px darken($color: #d4d4d4, $amount: 2);
 }
-
-
-
-

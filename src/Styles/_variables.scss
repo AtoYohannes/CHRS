@@ -1,5 +1,3 @@
-
-
 // override bootstrap 4 variables
 
 $blue: #2196f3;
@@ -13,23 +11,29 @@ $green: #4caf50;
 $teal: #009688;
 $cyan: #00bcd4;
 $white: #fff;
-$border-color : #1A1718;
-$primary: #083991;
-$secondary: #1A1718;
+$border-color: #1a1718;
+$primary: #1f6caa;
+$secondary: #2256a3;
 $success: #45b649;
 $danger: #f85032;
 $warning: #ffd700;
 $info: #00c9ff;
-$background: #F1F6FA;
+$background: #f1f6fa;
+$background-card: #ffffff;
 
 $theme-colors: (
-  "primary": #083991,
-  "secondary": #1A1718,
+  "primary": #800080,
+  "secondary": #3b3b9d8e,
   "success": #45b649,
   "danger": #f85032,
   "warning": #ffd700,
   "info": #00c9ff,
-  "background": #F1F6FA,
+  "background": #f1f6fa,
+  "background-card": #ffffff,
+  "bgoffeatures": #eeffef,
+  "rules": #ffecec,
+  "teal": #009688,
+  "cyan": #00bcd4,
 );
 
 $enable-gradients: true;
@@ -38,9 +42,5 @@ $enable-gradients: true;
 //
 $card-cap-bg: #fff;
 
-
 // sidebar
 $cr-sidebar-width: 224px;
-
-
-

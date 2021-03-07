@@ -1,0 +1,37 @@
+.addHotel {
+  background: url("../../Assets/BackgroundImages/Background2.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .addHotelContainer {
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+    font-size: 11px;
+    select {
+      font-size: 10px;
+    }
+    input {
+      font-size: 10px;
+    }
+    .facilities {
+      label {
+        margin: 10px;
+      }
+    }
+    .amenities {
+      label {
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.imagePreview {
+  img {
+    height: 110px;
+    object-fit: cover;
+    border-radius: 0px;
+  }
+}
